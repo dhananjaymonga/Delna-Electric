@@ -12,7 +12,7 @@ import CableAssit from "./components/CableAssit.jsx"
 import FAQPage from "./components/FAQ.jsx";
 import PdfDownload from "./components/PdfDowload.jsx";
 import Connect from "./components/Connect.jsx";
-import Dealership from "./components/DealerShip.jsx";
+import Dealership from "./components/Dealership.jsx";
 
 
 // Define routes properly
