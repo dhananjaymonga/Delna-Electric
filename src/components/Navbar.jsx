@@ -19,7 +19,7 @@ const Navbar = () => {
     { name: 'About', icon: <Info size={18} />, to: '/About' },
     { name: 'Products', icon: <Package size={18} />, to:"/products" },
     { name: 'Contact', icon: <Phone size={18} />, to: "/Contact" },
-    { name: 'FAQ', icon: <HelpCircle size={18} />, to: "products" },
+    { name: 'FAQ', icon: <HelpCircle size={18} />, to: "/Faq-Page" },
 
   ];
 
