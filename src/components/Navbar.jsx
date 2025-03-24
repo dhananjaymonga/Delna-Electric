@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Home, Info, Phone, Package,HelpCircle } from 'lucide-react';
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,11 +15,11 @@ const Navbar = () => {
   }, []);
 
   const navItems = [
-    { name: 'Home', icon: <Home size={18} />, href: '/' },
-    { name: 'About', icon: <Info size={18} />, href: '/about' },
-    { name: 'Products', icon: <Package size={18} />, href: '/products' },
-    { name: 'Contact', icon: <Phone size={18} />, href: '/contact' },
-    { name: 'FAQ', icon: <HelpCircle size={18} />, href: '/faq' },
+    { name: 'Home', icon: <Home size={18} />, to: '/' },
+    { name: 'About', icon: <Info size={18} />, to: '/About' },
+    { name: 'Products', icon: <Package size={18} />, to:"/products" },
+    { name: 'Contact', icon: <Phone size={18} />, to: "/Contact" },
+    { name: 'FAQ', icon: <HelpCircle size={18} />, to: "products" },
 
   ];
 
@@ -38,16 +39,16 @@ const Navbar = () => {
           <div className="hidden md:block">
             <div className="ml-10 flex items-center space-x-8">
               {navItems.map((item) => (
-                <a
+                <NavLink
                   key={item.name}
-                  href={item.href}
+                  to={item.to}
                   className="group flex items-center space-x-2 text-gray-700 hover:text-purple-600 transition-colors duration-300"
                 >
                   <span className="transform group-hover:scale-110 transition-transform duration-300">
                     {item.icon}
                   </span>
                   <span>{item.name}</span>
-                </a>
+                </NavLink>
               ))}
             </div>
           </div>
@@ -70,14 +71,14 @@ const Navbar = () => {
       } overflow-hidden bg-white/80 backdrop-blur-md`}>
         <div className="px-2 pt-2 pb-3 space-y-1">
           {navItems.map((item) => (
-            <a
+            <NavLink
               key={item.name}
-              href={item.href}
+              to={item.to}
               className="flex items-center space-x-2 px-3 py-2 rounded-md text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-300"
             >
               {item.icon}
               <span>{item.name}</span>
-            </a>
+            </NavLink>
           ))}
         </div>
       </div>

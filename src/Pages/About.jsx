@@ -1,8 +1,10 @@
 import React from 'react';
 import { Target, Lightbulb, Home, Factory, Award } from 'lucide-react';
-
+import Navbar from '../components/Navbar';
 const About = () => {
   return (
+    <>
+    <Navbar/>
     <div className="min-h-screen pt-16 bg-gradient-to-br from-purple-50 to-blue-50">
       {/* Company Overview */}
       <section className="max-w-7xl mx-auto px-4 py-16">
@@ -164,6 +166,7 @@ const About = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

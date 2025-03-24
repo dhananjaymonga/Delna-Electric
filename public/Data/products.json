@@ -1,0 +1,33 @@
+[
+    {
+      "id": 1,
+      "name": "HRFR House Wire",
+      "category": "House Wires",
+      "image": "https://images.unsplash.com/photo-1558424871-c0cc0d877e41?w=800&auto=format&fit=crop",
+      "description": "High-quality flame retardant house wire",
+      "features": ["Flame Retardant", "High Temperature Resistant", "Easy Installation"],
+      "specifications": {
+        "conductor": "Copper",
+        "insulation": "PVC",
+        "voltage": "450/750V",
+        "temperature": "70°C"
+      },
+      "video": "https://www.youtube.com/embed/example1"
+    },
+    {
+      "id": 2,
+      "name": "Industrial Power Cable",
+      "category": "Industrial Cables",
+      "image": "https://images.unsplash.com/photo-1601814933824-fd0b574dd592?w=800&auto=format&fit=crop",
+      "description": "Heavy-duty industrial power cable",
+      "features": ["Durable", "Weather Resistant", "High Current Capacity"],
+      "specifications": {
+        "conductor": "Aluminum",
+        "insulation": "XLPE",
+        "voltage": "600/1000V",
+        "temperature": "90°C"
+      },
+      "video": "https://www.youtube.com/embed/example2"
+    }
+  ]
+  
