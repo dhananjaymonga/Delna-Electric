@@ -4,7 +4,7 @@ import Home from './Pages/Home';
 import About from './Pages/About';
 import Products from './Pages/Product';
 import Contact from './Pages/Contact';
-import FAQ from './components/FAQ.JSX';
+import FAQ from './components/FAQ.jsx';
 function App() {
   return (
     <div className="min-h-screen bg-gray-50">
