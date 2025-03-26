@@ -7,12 +7,16 @@ import "./index.css";
 
 import About from "./Pages/About.jsx";
 import Contact from "./Pages/Contact.jsx";
-import Product from "./components/Product.jsx";
+// import Product from "./components/Product.jsx";
 import CableAssit from "./components/CableAssit.jsx"
 import FAQPage from "./components/FAQ.jsx";
 import PdfDownload from "./components/PdfDowload.jsx";
 import Connect from "./components/Connect.jsx";
 import Dealership from "./components/Dealership.jsx";
+// import Products from "./Pages/Product.jsx";
+import Product from "./Pages/Product.jsx";
+import { ProductProvider } from "./context/ProductContext.jsx";
+import ProductDetails from "./Pages/ProductDetails.jsx";
 
 
 // Define routes properly
@@ -53,11 +57,16 @@ const router = createBrowserRouter([
     path: "/products",
     element: <Product />,
   },
+  {
+    path: "/product-details",
+    element: <ProductDetails />,
+  },
 ]);
 
 // Only one createRoot() call
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <StrictMode>
+
+  <ProductProvider>
     <RouterProvider router={router} />
-  </StrictMode>
+  </ProductProvider>
 );

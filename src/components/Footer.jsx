@@ -49,7 +49,7 @@ function Footer({ setCurrentPage }) {
         </div>
         
         <div className="max-w-6xl mx-auto px-4 mt-8 pt-8 border-t border-gray-800">
-          <p className="text-center text-gray-400">© 2024  Delna. All rights reserved.</p>
+          <p className="text-center text-gray-400">© 2025  Delna. All rights reserved.</p>
         </div>
       </footer>
     </div>

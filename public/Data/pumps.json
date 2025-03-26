@@ -1,0 +1,26 @@
+{
+    "category": "Submersible Pumps",
+    "brand": "Delna",
+    "description": "Experience unmatched efficiency and durability with Delna's Submersible Pumps, designed for superior water lifting performance and long-lasting reliability.",
+    "products": [
+      {
+        "name": "Delna Submersible Pump",
+        "power_options": ["20W", "40W"],
+        "features": [
+          "Pure Copper Motor to Wire – Ensures maximum efficiency & durability",
+          "Highest Lifting Capacity – Best in the market for superior water flow",
+          "Works in Ultra Dim Light – Operates efficiently even in low-voltage conditions",
+          "Pure Virgin Magnet – Delivers consistent power output & longevity",
+          "Heavy Propeller – Designed for high water thrust & smooth operation",
+          "Tough Insulation – Prevents overheating & ensures safety in all conditions",
+          "Long Wire – Provides flexibility & ease of installation"
+        ],
+        "warranty": {
+          "type": "Absolute 2-Season Warranty",
+          "details": "Piece-to-piece replacement guarantee for total peace of mind"
+        }
+      }
+    ],
+    "contact": "For inquiries & orders, contact us today!"
+  }
+  

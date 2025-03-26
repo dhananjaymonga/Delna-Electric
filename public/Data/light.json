@@ -1,0 +1,84 @@
+[
+  {
+    "id": 1,
+    "brand": "Delna Lighting Solutions",
+    "description": "Illuminate Brilliance - High-performance, energy-efficient lighting solutions designed for superior illumination and long-lasting durability. Industry-leading 110 lumens per watt efficiency.",
+    "product_range": [
+      {
+        "id": 1,
+        "category": "Concealed Lights",
+        "features": {
+          "available_wattages": ["6W", "7W", "9W", "15W"],
+          "efficiency": "110 lumens per watt",
+          "material": "Thick heat sync aluminum sheets",
+          "protection": "High & low watt protection for longer lifespan"
+        }
+      },
+      {
+        "id": 2,
+        "category": "LED Panels (Round & Square)",
+        "features": {
+          "available_wattages": ["8W", "12W", "15W", "22W"],
+          "sizes": ["4 inches", "5 inches", "6 inches", "8 inches"],
+          "design": "Absolute fitting & seamless integration"
+        }
+      },
+      {
+        "id": 3,
+        "category": "Surface Lights (Round & Square)",
+        "features": {
+          "wattage": "15W",
+          "material": "Sturdy aluminum construction for better heat management"
+        }
+      },
+      {
+        "id": 4,
+        "category": "COB Lights",
+        "features": {
+          "available_wattages": ["7W", "12W"],
+          "reflector": "Long aluminum reflector for better light focus"
+        }
+      },
+      {
+        "id": 5,
+        "category": "Linear Lights",
+        "features": {
+          "wattage": "12W",
+          "focus_range": "Long focus range"
+        }
+      },
+      {
+        "id": 6,
+        "category": "Wall Lights",
+        "features": {
+          "K_Lights": "6W",
+          "Purse_Lights": {
+            "1+1": "6W",
+            "2+2": "12W",
+            "3+3": "18W"
+          },
+          "4-Way_Light": "12W",
+          "Spot_Lights": "2W"
+        }
+      },
+      {
+        "id": 7,
+        "category": "Flood Lights",
+        "features": {
+          "body": "Heavy-duty with big reflector for maximum light dispersion",
+          "available_wattages": ["50W", "100W", "200W"]
+        }
+      },
+      {
+        "id": 8,
+        "category": "Foot Lights",
+        "features": {
+          "wattage": "6W",
+          "illumination": "Elegant LED for soft illumination"
+        }
+      }
+    ],
+    "commitment": "High durability, superior brightness, and advanced safety features.",
+    "contact": "For bulk inquiries or more details, contact us today!"
+  }
+]

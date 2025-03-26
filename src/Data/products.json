@@ -1,0 +1,75 @@
+{
+    "products": [
+      {
+        "id": 1,
+        "name": "Professional Electric Guitar",
+        "category": "String Instruments",
+        "image": "https://images.unsplash.com/photo-1516924962500-2b4b3b99ea02",
+        "description": "Premium electric guitar with exceptional tone and playability"
+      },
+      {
+        "id": 2,
+        "name": "Professional Synthesizer X1",
+        "category": "Synthesizers",
+        "image": "https://images.unsplash.com/photo-1598520106830-8c45c2035460",
+        "description": "Advanced synthesizer with multiple sound engines and effects"
+      },
+      {
+        "id": 3,
+        "name": "Rhythm Drum Machine",
+        "category": "Drum Machines",
+        "image": "https://images.unsplash.com/photo-1519892300165-cb5542fb47c7",
+        "description": "Professional drum machine with authentic sounds"
+      },
+      {
+        "id": 4,
+        "name": "Premium Headphones",
+        "category": "Accessories",
+        "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e",
+        "description": "High-quality studio monitoring headphones"
+      },
+      {
+        "id": 5,
+        "name": "Advanced MIDI Controller",
+        "category": "MIDI Controllers",
+        "image": "https://images.unsplash.com/photo-1598653222000-6b7b7a552625",
+        "description": "Versatile MIDI controller for studio and live performance"
+      },
+      {
+        "id": 6,
+        "name": "Studio Monitor Speakers",
+        "category": "Accessories",
+        "image": "https://images.unsplash.com/photo-1545454675-3531b543be5d",
+        "description": "Professional studio monitoring speakers"
+      },
+      {
+        "id": 7,
+        "name": "Professional Digital Mixer",
+        "category": "Audio Interfaces",
+        "image": "https://images.unsplash.com/photo-1598524374865-279f170b3623",
+        "description": "Digital mixing console for professional audio production"
+      },
+      {
+        "id": 8,
+        "name": "Compact Synthesizer",
+        "category": "Synthesizers",
+        "image": "https://images.unsplash.com/photo-1558098329-44e410142d87",
+        "description": "Portable synthesizer with powerful features"
+      },
+      {
+        "id": 9,
+        "name": "Signature Electric Guitar",
+        "category": "String Instruments",
+        "image": "https://images.unsplash.com/photo-1550291652-6ea9114a47b1",
+        "description": "Limited edition signature model electric guitar"
+      },
+      {
+        "id": 10,
+        "name": "Compact Guitar Amplifier",
+        "category": "Amplifiers",
+        "image": "https://images.unsplash.com/photo-1546195643-70f48f9c5b87",
+        "description": "Portable guitar amplifier with rich tone"
+      }
+    ]
+  }
+  
