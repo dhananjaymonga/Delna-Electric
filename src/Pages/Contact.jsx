@@ -1,5 +1,5 @@
 import Navbar from '../components/Navbar';
-import {useLocation } from "react-router-dom";
+import {NavLink, useLocation } from "react-router-dom";
 
 import React, { useState,useEffect } from 'react';
 import { ArrowRight, Users, Rocket, Award, Globe, Leaf, Zap } from 'lucide-react';
@@ -243,9 +243,11 @@ const ContactPageClone = () => {
       <div className="text-center mt-8">
         <h3 className="text-xl font-semibold text-gray-800">Have More Questions?</h3>
         <p className="text-gray-600 mt-2">Check out our frequently asked questions for quick answers to common inquiries.</p>
-        <button className="mt-4 bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition-colors duration-300">
+ <NavLink to={"/Faq-Page"}> <button className="mt-4 bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition-colors duration-300">
           View FAQ
-        </button>
+          
+        </button></NavLink>
+        
       </div>
 
       {/* Business Hours */}
