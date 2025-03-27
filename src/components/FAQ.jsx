@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import {useLocation } from "react-router-dom";
+import Navbar from './Navbar';
+import Footer from '../Pages/Footer';
 import { 
   Zap, 
   Cable, 
@@ -174,7 +177,14 @@ function CategorySection({ category }) {
 }
 
 function App() {
+   const location = useLocation();
+    console.log("Current Path:", location.pathname); // Debugging ke liye
+    
+    const showHeaderFooter = location.pathname === "/Faq-Page"; 
   return (
+    <>
+    {showHeaderFooter && <Navbar />}
+
     <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50">
       <div className="max-w-4xl mx-auto px-4 py-16">
         <div className="text-center mb-12 animate-fade-in">
@@ -204,8 +214,9 @@ function App() {
         </div>
       </div>
     </div>
-   
- 
+       {showHeaderFooter && <Footer />}
+
+    </>
   );
 }
 

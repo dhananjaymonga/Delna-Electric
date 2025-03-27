@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, } from 'react';
+import {useLocation } from "react-router-dom";
+
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { ArrowRight, Users, Rocket, Award, Globe, Leaf, Zap } from 'lucide-react';
@@ -37,6 +39,8 @@ const Counter = ({ end, duration = 2, label }) => {
       }
     };
   }, [end, duration, inView]);
+  
+
 
   return (
     <div ref={ref} className="text-center">
@@ -133,13 +137,19 @@ function App() {
       image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=400&q=80"
     }
   ];
+  const location = useLocation();
+  console.log("Current Path:", location.pathname); // Debugging ke liye
+  
+  const showHeaderFooter = location.pathname === "/About"; // Sirf About page pe show hoga
+    console.log("Current Path:", location.pathname);
+
 
   return (
     <>
     <div>
     <div className="min-h-screen bg-gray-50">
-      <Navbar/>
-      {/* Hero Section */}
+    {showHeaderFooter && <Navbar />}
+    {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center bg-gradient-to-r from-blue-600 to-blue-400 text-white overflow-hidden">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
@@ -177,17 +187,17 @@ function App() {
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Counter end={5000} label="Sides" />
-            <Counter end={15} label="Warehouses" />
-            <Counter end={15} label="Awards Won" />
-            <Counter end={15} label="Awards Won" />
-            <Counter end={800} label="Customer statification" />
+            <Counter end={5500} label=" Sites Covered " />
+            <Counter end={2} label="Warehouses" />
+            <Counter end={7} label="States" />
+            <Counter end={10} label="Year of Industries Expertise" />
+            <Counter end={200} label="Channel Partner" />
           </div>
         </div>
       </section>
 
       {/* Team Section */}
-      <section className="py-20 px-4">
+      {/* <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <AnimatedSection>
             <h2 className="text-4xl font-bold text-center mb-4">Meet Our Team</h2>
@@ -218,7 +228,7 @@ function App() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Journey Timeline */}
       <section className="py-20 bg-white px-4">
@@ -233,27 +243,27 @@ function App() {
           <div className="space-y-12">
             {[
               {
-                year: "2018",
-                title: "Company Founded",
-                description: "Our story began with a simple mission to create innovative solutions.",
+                year: "2015",
+                title: "Foundation of Excellence",
+                description: "Established with a vision to provide high-quality electrical solutions.",
                 icon: Users
               },
               {
-                year: "2019",
-                title: "First Product Launch",
-                description: "Successfully launched our flagship product to global markets.",
+                year: "2018",
+                title: "Launch of Delna",
+                description: "Introduced Delna as a brand, expanding our product portfolio.",
                 icon: Rocket
               },
               {
-                year: "2020",
-                title: "International Expansion",
-                description: "Opened new offices across three continents to serve our growing customer base.",
+                year: "2019",
+                title: "Second Factory Established",
+                description: "Increased production capacity to meet growing market demand.",
                 icon: Globe
               },
               {
                 year: "2021",
-                title: "Innovation Award",
-                description: "Recognized for breakthrough technology at the Tech Innovation Awards.",
+                title: "Commitment to Sustainability",
+                description: "Initiated eco-friendly practices for a greener future.",
                 icon: Award
               },
               {
@@ -276,7 +286,9 @@ function App() {
       </section>
       
     </div>
-            {/* <Footer/> */}
+    
+    {showHeaderFooter && <Footer />}
+           
     </div>
     </>
   );

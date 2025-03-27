@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <div>
           <div className="h-1 bg-gradient-to-r from-orange-500 to-orange-600 animate-pulse"></div>
-    <footer className="bg-gray-900 text-white py-12">
+    <footer className="bg-gray-900 text-white py-12 px-5">
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
           <div className="reveal-on-scroll reveal-delay-100">

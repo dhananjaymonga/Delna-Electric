@@ -36,6 +36,7 @@ function App() {
        {/* <Contact /> */}
       <FAQ />
     {/* <Someui/> */}
+    <Footer/>
     </div>
   );
 }

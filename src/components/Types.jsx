@@ -28,8 +28,8 @@ function Home() {
         <div className="flex justify-center mb-4">
           <Calculator className="w-16 h-16 text-orange-500" />
         </div>
-        <h2 className="text-xl font-bold mb-4">Cable ASSIST CALCULATOR</h2>
-        <p className="text-gray-600">Help us, Help You through our Kabel Assist Calculator</p>
+        <h2 className="text-xl font-bold mb-4">CABLE ASSIST CALCULATOR</h2>
+        <p className="text-gray-600">Help us, Help You through our Cabel Assist Calculator</p>
       </div>
 
       {/* RR Connect App Section */}
@@ -40,7 +40,7 @@ function Home() {
         <div className="flex justify-center mb-4">
           <Share2 className="w-16 h-16 text-orange-500" />
         </div>
-        <h2 className="text-xl font-bold mb-4">RR CONNECT APP</h2>
+        <h2 className="text-xl font-bold mb-4">DELNA CONNECT APP</h2>
         <p className="text-gray-600">Earn Loyalty Points and join our community</p>
       </div>
       
