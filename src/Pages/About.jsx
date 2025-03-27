@@ -1,5 +1,5 @@
 import React, { useState, useEffect, } from 'react';
-import {useLocation } from "react-router-dom";
+import {NavLink, useLocation } from "react-router-dom";
 
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -40,7 +40,9 @@ const Counter = ({ end, duration = 2, label }) => {
     };
   }, [end, duration, inView]);
   
-
+  useEffect(() => {
+    window.scrollTo(0,0)
+   }, []);
 
   return (
     <div ref={ref} className="text-center">
@@ -178,6 +180,7 @@ function App() {
             whileTap={{ scale: 0.95 }}
             className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold flex items-center gap-2 mx-auto hover:bg-blue-50 transition-colors"
           >
+            
             Get Started <ArrowRight className="w-5 h-5" />
           </motion.button>
         </motion.div>

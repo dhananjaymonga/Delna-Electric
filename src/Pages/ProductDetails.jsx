@@ -27,8 +27,8 @@ const ProductDetail = () => {
   return (
     <>
       <Navbar />
-      <div className="container mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+      <div className="container mx-auto px-4 py-8 ">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 mt-16">
           {/* Product Image */}
           <div className="relative overflow-hidden rounded-lg">
             <img src={product?.image || 'https://via.placeholder.com/300'} alt={product?.name || 'No Image'} className="h-full w-full object-cover" />

@@ -81,7 +81,7 @@
 // };
 
 // export default Products;
-import React from 'react';
+import React,{useEffect} from 'react';
 import {useLocation } from "react-router-dom";
 
 import { ProductGrid } from '../components/Products/ProductGrid';
@@ -89,6 +89,9 @@ import { useProducts } from '../context/ProductContext';
 import Navbar from '../components/Navbar';
 import Footer from './Footer';
 const Product = () => {
+  useEffect(() => {
+    window.scrollTo(0,0)
+   }, []);
   const { products } = useProducts();
   const location = useLocation();
   console.log("Current Path:", location.pathname); // Debugging ke liye

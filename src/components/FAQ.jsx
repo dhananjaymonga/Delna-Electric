@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import {useLocation } from "react-router-dom";
 import Navbar from './Navbar';
 import Footer from '../Pages/Footer';
@@ -177,6 +177,9 @@ function CategorySection({ category }) {
 }
 
 function App() {
+    useEffect(() => {
+      window.scrollTo(0,0)
+     }, []);
    const location = useLocation();
     console.log("Current Path:", location.pathname); // Debugging ke liye
     
