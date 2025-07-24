@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Phone, MapPin } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 function Footer({ setCurrentPage }) {
     const navigate = useNavigate();
@@ -55,5 +56,35 @@ function Footer({ setCurrentPage }) {
     </div>
   );
 }
+
+const Footer = () => {
+    const [visitorCount, setVisitorCount] = useState(100000);
+
+    useEffect(() => {
+        const fetchVisitorCount = async () => {
+            try {
+                const response = await fetch('http://localhost:5000/api/visitor-count');
+                const data = await response.json();
+                setVisitorCount(data.count);
+            } catch (error) {
+                console.error('Error fetching visitor count:', error);
+            }
+        };
+
+        fetchVisitorCount();
+    }, []);
+
+    const formatNumber = (num) => {
+        return new Intl.NumberFormat().format(num);
+    };
+
+    return (
+        <footer>
+            <div className="visitor-counter">
+                <p>Total Visitors: {formatNumber(visitorCount)}</p>
+            </div>
+        </footer>
+    );
+};
 
 export default Footer;

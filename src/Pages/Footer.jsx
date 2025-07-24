@@ -1,9 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { Heart, Mail, Phone, MapPin, Instagram, Twitter, Facebook, Linkedin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+const START_COUNT = 200000;
+
 const Footer = () => {
+  const [count, setCount] = useState(START_COUNT);
+
+  useEffect(() => {
+    // LocalStorage me value check karein
+    const savedCount = localStorage.getItem("siteVisitCount");
+    if (savedCount) {
+      setCount(Number(savedCount) + 1);
+      localStorage.setItem("siteVisitCount", Number(savedCount) + 1);
+    } else {
+      setCount(START_COUNT + 1);
+      localStorage.setItem("siteVisitCount", START_COUNT + 1);
+    }
+  }, []);
+
   return (
     <div>
           <div className="h-1 bg-gradient-to-r from-orange-500 to-orange-600 animate-pulse"></div>
@@ -82,8 +98,11 @@ const Footer = () => {
           <p className="text-center text-gray-400">© 2025  Delna. All rights reserved.</p>
      
             <p className="text-muted-foreground text-sm flex items-center">
-              Made with <Heart size={14} className="mx-1 text-primary" /> for music lovers
+              Made with <Heart size={14} className="mx-1 text-primary" /> for musicj lovers
             </p>
+             <p className="text-sm">
+          Total Visitors: <span className="font-bold">{count.toLocaleString("en-IN")}</span>
+        </p>
           </div>
         </div>
       </div>

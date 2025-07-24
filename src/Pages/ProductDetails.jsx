@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react'; // 🔥 add useEffect
 import { useParams, useNavigate } from 'react-router-dom';
 import { useProducts } from '../context/ProductContext';
 import Navbar from '../components/Navbar';
@@ -10,12 +10,16 @@ const ProductDetail = () => {
 
   const product = products.find(p => String(p.id) === String(id));
 
+  // 🔥 Scroll to top whenever product ID changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [id]);
+
   // Similar products logic
   let similarProducts = product
     ? products.filter(p => p.category === product.category && String(p.id) !== String(id))
     : [];
 
-  // If no similar products found, show other products (except the current one)
   if (similarProducts.length === 0) {
     similarProducts = products.filter(p => String(p.id) !== String(id));
   }
@@ -27,7 +31,7 @@ const ProductDetail = () => {
   return (
     <>
       <Navbar />
-      <div className="container mx-auto px-4 py-8 ">
+      <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 mt-16">
           {/* Product Image */}
           <div className="relative overflow-hidden rounded-lg">
@@ -70,13 +74,17 @@ const ProductDetail = () => {
             )}
 
             {/* Variants */}
-            {product?.variants?.length > 0 && (
+            {/* {product?.variants?.length > 0 && (
               <div className="mt-8">
                 <h2 className="text-xl font-semibold text-gray-900">Available Variants</h2>
                 <div className="mt-4 space-y-4">
                   {product?.variants?.map((variant, index) => (
                     <div key={index} className="rounded-lg bg-gray-50 p-4">
                       <h3 className="font-medium text-gray-900">{variant.name || 'No Variant Name'}</h3>
+                      <h3 className="font-medium text-gray-900">{variant.size || 'No Variant Name'}</h3>
+                      <h3 className="font-medium text-gray-900">{variant.motor_type|| 'No Variant Name'}</h3>
+                      <h3 className="font-medium text-gray-900">{variant.body_material|| 'No Variant Name'}</h3>
+                      <h3 className="font-medium text-gray-900">{variant.motor_winding|| 'No Variant Name'}</h3>
                       <div className="mt-2 flex flex-wrap gap-2">
                         {variant?.specs?.map((spec, i) => (
                           <span key={i} className="rounded-full bg-white px-3 py-1 text-sm text-gray-700 shadow-sm">
@@ -88,7 +96,44 @@ const ProductDetail = () => {
                   ))}
                 </div>
               </div>
-            )}
+            )} */}
+            {/* Variants */}
+{product?.variants?.length > 0 && (
+  <div className="mt-8">
+    <h2 className="text-xl font-semibold text-gray-900">Available Variants</h2>
+    <div className="mt-4 space-y-4">
+      {product?.variants?.map((variant, index) => (
+        <div key={index} className="rounded-lg bg-gray-50 p-4 space-y-2">
+          {variant.name && (
+            <h3 className="font-medium text-gray-900">Name: {variant.name}</h3>
+          )}
+          {variant.size && (
+            <h3 className="font-medium text-gray-900">Size: {variant.size}</h3>
+          )}
+          {variant.motor_type && (
+            <h3 className="font-medium text-gray-900">Motor Type: {variant.motor_type}</h3>
+          )}
+          {variant.body_material && (
+            <h3 className="font-medium text-gray-900">Body Material: {variant.body_material}</h3>
+          )}
+          {variant.motor_winding && (
+            <h3 className="font-medium text-gray-900">Motor Winding: {variant.motor_winding}</h3>
+          )}
+          {variant.specs?.length > 0 && (
+            <div className="mt-2 flex flex-wrap gap-2">
+              {variant.specs.map((spec, i) => (
+                <span key={i} className="rounded-full bg-white px-3 py-1 text-sm text-gray-700 shadow-sm">
+                  {spec}
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+)}
+
           </div>
         </div>
 

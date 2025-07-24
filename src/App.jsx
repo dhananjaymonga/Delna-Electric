@@ -19,7 +19,8 @@ function App() {
   const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
-    setShowPopup(true); // Refresh par popup dikhega
+    setShowPopup(true);
+    window.scrollTo({ top: 0, behavior: "smooth" }); // Sida turant upar
   }, []);
 
   return (
@@ -28,14 +29,14 @@ function App() {
       
       <Navbar />
       <Home />
-       <Types />
+      <Types />
       <Mission/>
-       <Section/>
+      <Section/>
       <About />
       <Products />
-       {/* <Contact /> */}
+      {/* <Contact /> */}
       <FAQ />
-    <Footer/>
+      <Footer/>
     </div>
   );
 }
