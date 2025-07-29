@@ -1,6 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen pt-16">
       <div className="relative h-[80vh] bg-gradient-to-br from-purple-50 to-blue-50">
@@ -13,8 +16,11 @@ const Home = () => {
             <p className="text-xl text-gray-600 max-w-2xl mb-8">
               Experience innovation and excellence in everything we do. Discover our world-class products and services.
             </p>
-            <button className="bg-purple-600 text-white px-8 py-3 rounded-lg hover:bg-purple-700 transform hover:scale-105 transition-all duration-300">
-              Get Started
+            <button
+              className="bg-purple-600 text-white px-8 py-3 rounded-lg hover:bg-purple-700 transform hover:scale-105 transition-all duration-300"
+              onClick={() => navigate('/about')}
+            >
+              Read More
             </button>
           </div>
         </div>
