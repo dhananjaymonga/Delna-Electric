@@ -16,9 +16,10 @@ function Home() {
         <div className="flex justify-center mb-4">
           <FileText className="w-16 h-16 text-orange-500" />
         </div>
-        <h2 className="text-xl font-bold mb-4">PRICELIST/BROCHURES</h2>
-        <p className="text-gray-600">Download our latest Price List and Brochure for all our Products</p>
-      </div>
+        <h2 className="text-xl font-bold mb-4">BROCHURES</h2>
+        <p className="text-gray-600">Download our latest Brochure for all our Products</p>
+{/* <h2>        Price List</h2>    */}
+   </div>
 
       {/* Cable Assist Calculator Section */}
       <div

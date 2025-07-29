@@ -173,7 +173,7 @@ function App() {
             transition={{ delay: 0.7, duration: 0.8 }}
             className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto"
           >
-            We're pushing the boundaries of technology to create solutions that matter.
+            Discover our cutting-edge electrical solutions designed to power your world with reliability and efficiency.
           </motion.p>
           <motion.button
             whileHover={{ scale: 1.05 }}
@@ -252,31 +252,31 @@ function App() {
                 icon: Users
               },
               {
-                year: "2018",
+                year: "2020",
                 title: "Launch of Delna",
                 description: "Introduced Delna as a brand, expanding our product portfolio.",
                 icon: Rocket
               },
               {
-                year: "2019",
+                year: "2021",
                 title: "Second Factory Established",
                 description: "Increased production capacity to meet growing market demand.",
                 icon: Globe
               },
               {
-                year: "2021",
+                year: "2022",
                 title: "Commitment to Sustainability",
                 description: "Initiated eco-friendly practices for a greener future.",
                 icon: Award
               },
               {
-                year: "2022",
+                year: "2023",
                 title: "Sustainable Initiative",
                 description: "Launched our eco-friendly program reducing carbon footprint.",
                 icon: Leaf
               },
               {
-                year: "2023",
+                year: "2025",
                 title: "Next Generation",
                 description: "Began work on revolutionary AI-driven solutions.",
                 icon: Zap

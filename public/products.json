@@ -3,7 +3,7 @@
     {
       "id": "1",
       "name": "Delna Submersible Pumps",
-      "image": "Images/DSC08947---1.jpg",
+      "image": "images/DSC08947---1.jpg",
       "category": "Pumps",
       "description": "Experience unmatched efficiency and durability with Delna's Submersible Pumps, designed for superior water lifting performance and long-lasting reliability.",
       "features": [
@@ -26,7 +26,7 @@
     {
       "id": "2",
       "name": "Delna LED Panel Lights",
-      "image": "/Images/DSC08917--1.jpg",
+      "image": "/images/DSC08917--1.jpg",
       "category": "Lighting",
       "description": "High-performance, energy-efficient LED panel lights delivering industry-leading 110 lumens per watt illumination.",
       "features": [
@@ -55,7 +55,7 @@
     {
       "id": "3",
       "name": "Delna LED Flood Lights",
-      "image": "/Images/DSC08923-1.jpg",
+      "image": "/images/DSC08923-1.jpg",
       "category": "Lighting",
       "description": "High-performance, energy-efficient LED panel lights delivering industry-leading 110 lumens per watt illumination.",
       "features": [
@@ -81,77 +81,73 @@
         }
       ]
     },
-  
-{
-  "id": "4",
-  "name": "Delna Conduit Pipes",
-  "image": "/Images/pipes.webp",
-  "category": "Pipes",
-  "description": "Strong. Reliable. Smart protection for every wire. Delna Electrical’s LMS, MMS, and HMS conduit pipes are crafted from high-grade PVC to ensure maximum safety, durability, and ease of installation across a range of applications—from homes to industrial environments.",
-  "features": [
-    "High Durability: Premium-grade PVC construction",
-    "Fire Retardant: Self-extinguishing material",
-    "Weather & Moisture Resistant",
-    "Easy Wire Pulling: Smooth inner walls",
-    "Non-Conductive: Shock-safe design",
-    "Quick Installation: Lightweight and easy to handle"
-  ],
-  "product_range": [
     {
-      "type": "LMS (Light Mechanical Strength)",
-      "description": "Ideal for concealed wiring in homes and modular interiors",
+      "id": "4",
+      "name": "Delna Conduit Pipes",
+      "image": "/images/pipes.webp",
+      "category": "Pipes",
+      "description": "Strong. Reliable. Smart protection for every wire. Delna Electrical’s LMS, MMS, and HMS conduit pipes are crafted from high-grade PVC to ensure maximum safety, durability, and ease of installation across a range of applications—from homes to industrial environments.",
+      "features": [
+        "High Durability: Premium-grade PVC construction",
+        "Fire Retardant: Self-extinguishing material",
+        "Weather & Moisture Resistant",
+        "Easy Wire Pulling: Smooth inner walls",
+        "Non-Conductive: Shock-safe design",
+        "Quick Installation: Lightweight and easy to handle"
+      ],
+      "product_range": [
+        {
+          "type": "LMS (Light Mechanical Strength)",
+          "description": "Ideal for concealed wiring in homes and modular interiors",
+          "applications": [
+            "False ceilings",
+            "Partition walls",
+            "Light commercial spaces"
+          ]
+        },
+        {
+          "type": "MMS (Medium Mechanical Strength)",
+          "description": "Best for standard commercial and institutional setups",
+          "applications": [
+            "Retail stores",
+            "Offices",
+            "Small industrial projects"
+          ]
+        },
+        {
+          "type": "HMS (Heavy Mechanical Strength)",
+          "description": "Built for harsh and outdoor conditions",
+          "applications": [
+            "Factories",
+            "Warehouses",
+            "Outdoor & underground installations"
+          ]
+        }
+      ],
+      "specifications": {
+        "Available Sizes": ["25mm"," " ,"32mm"," ", "40mm"," ", "50mm"],
+        "Material": "Premium-grade PVC",
+        "Compliance": "ISI Certified",
+        "Strength Grades": ["LMS", "MMS", "HMS"]
+      },
       "applications": [
-        "False ceilings",
-        "Partition walls",
-        "Light commercial spaces"
+        "Home Electrical Systems (False ceilings, concealed wiring)",
+        "Commercial Buildings (Offices, schools, showrooms)",
+        "Industrial Projects (Factories, plants, warehouses)",
+        "Outdoor & Underground Installations (With HMS grade)"
+      ],
+      "why_choose_delna": [
+        "Over 2 decades of trust in electrical solutions",
+        "Consistent product quality and timely delivery",
+        "Tailored solutions for all kinds of wiring applications",
+        "Compliant with ISI & industry standards",
+        "Trusted by electricians, builders, and institutions alike"
       ]
     },
-    {
-      "type": "MMS (Medium Mechanical Strength)",
-      "description": "Best for standard commercial and institutional setups",
-      "applications": [
-        "Retail stores",
-        "Offices",
-        "Small industrial projects"
-      ]
-    },
-    {
-      "type": "HMS (Heavy Mechanical Strength)",
-      "description": "Built for harsh and outdoor conditions",
-      "applications": [
-        "Factories",
-        "Warehouses",
-        "Outdoor & underground installations"
-      ]
-    }
-  ],
-  "specifications": {
-    "Available Sizes": ["25mm"," " ,"32mm"," ", "40mm"," ", "50mm"],
-    "Material": "Premium-grade PVC",
-    "Compliance": "ISI Certified",
-    "Strength Grades": ["LMS", "MMS", "HMS"]
-  },
-  "applications": [
-    "Home Electrical Systems (False ceilings, concealed wiring)",
-    "Commercial Buildings (Offices, schools, showrooms)",
-    "Industrial Projects (Factories, plants, warehouses)",
-    "Outdoor & Underground Installations (With HMS grade)"
-  ],
-  "why_choose_delna": [
-    "Over 2 decades of trust in electrical solutions",
-    "Consistent product quality and timely delivery",
-    "Tailored solutions for all kinds of wiring applications",
-    "Compliant with ISI & industry standards",
-    "Trusted by electricians, builders, and institutions alike"
-  ]
-},
-
-
-   
     {
       "id": "5",
       "name": "Delna Concealed Lights",
-      "image": "/Images/DSC08967---1.jpg",
+      "image": "/images/DSC08967---1.jpg",
       "category": "Lighting",
       "description": "Efficient and stylish concealed lighting solutions for modern interiors.",
       "features": [
@@ -169,7 +165,7 @@
     {
       "id": "6",
       "name": "Delna Surface Lights",
-      "image": "/Images/DSC08915--1 (1).jpg",
+      "image": "/images/DSC08915--1 (1).jpg",
       "category": "Lighting",
       "description": "High-performance surface-mounted LED lights for modern applications.",
       "features": [
@@ -190,7 +186,7 @@
     {
       "id": "7",
       "name": "Delna COB Lights",
-      "image": "/Images/DSC08926--1.jpg",
+      "image": "/images/DSC08926--1.jpg",
       "category": "Lighting",
       "description": "COB LED lights with superior focus and efficiency.",
       "features": [
@@ -199,56 +195,56 @@
       ]
     },
     {
-  "id": "8",
-  "name": "Delna Heavy Duty Industrial Exhaust Fans",
-  "image": "/Images/DSC08945--1.jpg",
-  "category": "Ventilation",
-  "description": "Powerful Airflow. Built to Last. Engineered for Industry. Delna’s Industrial Exhaust Fans are designed for high-volume air movement in harsh environments like factories, workshops, and warehouses. Built with pure copper motors, aluminium bodies, and bearing-type mechanisms for peak reliability.",
-  "features": [
-    "100% Pure Copper Motor for high-efficiency operation",
-    "Rust-resistant aluminium body – durable yet lightweight",
-    "Bearing-type motor for smooth rotation and low noise",
-    "High air delivery to eliminate fumes, heat, and stale air",
-    "Designed for continuous use in tough industrial conditions"
-  ],
-  "variants": [
-    {
-      "size": "15 Inch",
-      "motor_type": "Bearing Type Motor",
-      "body_material": "Aluminium",
-      "motor_winding": "100% Copper"
+      "id": "8",
+      "name": "Delna Heavy Duty Industrial Exhaust Fans",
+      "image": "/images/DSC08945--1.jpg",
+      "category": "Ventilation",
+      "description": "Powerful Airflow. Built to Last. Engineered for Industry. Delna’s Industrial Exhaust Fans are designed for high-volume air movement in harsh environments like factories, workshops, and warehouses. Built with pure copper motors, aluminium bodies, and bearing-type mechanisms for peak reliability.",
+      "features": [
+        "100% Pure Copper Motor for high-efficiency operation",
+        "Rust-resistant aluminium body – durable yet lightweight",
+        "Bearing-type motor for smooth rotation and low noise",
+        "High air delivery to eliminate fumes, heat, and stale air",
+        "Designed for continuous use in tough industrial conditions"
+      ],
+      "variants": [
+        {
+          "size": "15 Inch",
+          "motor_type": "Bearing Type Motor",
+          "body_material": "Aluminium",
+          "motor_winding": "100% Copper"
+        },
+        {
+          "size": "18 Inch",
+          "motor_type": "Bearing Type Motor",
+          "body_material": "Aluminium",
+          "motor_winding": "100% Copper"
+        },
+        {
+          "size": "24 Inch",
+          "motor_type": "Bearing Type Motor",
+          "body_material": "Aluminium",
+          "motor_winding": "100% Copper"
+        }
+      ],
+      "applications": [
+        "Factories & Workshops – Removes smoke, fumes, and heat",
+        "Warehouses & Storage Rooms – Maintains air circulation",
+        "Large Kitchens & Generator Rooms – Reduces heat and odor",
+        "Construction Sites & Sheds – Ensures breathable air flow"
+      ],
+      "why_choose_delna": [
+        "High-performance copper motors built for industrial use",
+        "Low maintenance with long service life",
+        "Trusted by industrial professionals and technicians",
+        "Backed by Delna's quality assurance and service support"
+      ],
+      "call_to_action": "Contact us today for bulk orders, quotes, or installation inquiries. 📞 Call Now | 📩 Request a Quote"
     },
-    {
-      "size": "18 Inch",
-      "motor_type": "Bearing Type Motor",
-      "body_material": "Aluminium",
-      "motor_winding": "100% Copper"
-    },
-    {
-      "size": "24 Inch",
-      "motor_type": "Bearing Type Motor",
-      "body_material": "Aluminium",
-      "motor_winding": "100% Copper"
-    }
-  ],
-  "applications": [
-    "Factories & Workshops – Removes smoke, fumes, and heat",
-    "Warehouses & Storage Rooms – Maintains air circulation",
-    "Large Kitchens & Generator Rooms – Reduces heat and odor",
-    "Construction Sites & Sheds – Ensures breathable air flow"
-  ],
-  "why_choose_delna": [
-    "High-performance copper motors built for industrial use",
-    "Low maintenance with long service life",
-    "Trusted by industrial professionals and technicians",
-    "Backed by Delna's quality assurance and service support"
-  ],
-  "call_to_action": "Contact us today for bulk orders, quotes, or installation inquiries. 📞 Call Now | 📩 Request a Quote"
-},
     {
       "id": "9",
       "name": "Delna Linear Lights",
-      "image": "/Images/DSC08932--1.jpg",
+      "image": "/images/DSC08932--1.jpg",
       "category": " Lighting",
       "description": "Slim and efficient linear LED lights with long focus range.",
       "features": [
@@ -258,18 +254,17 @@
     {
       "id": "10",
       "name": "Delna Foot Lights",
-      "image": "/Images/DSC08930--00 (1).jpg",
+      "image": "/images/DSC08930--00 (1).jpg",
       "category": "Lighting",
       "description": "Elegant LED foot lights for soft illumination.",
       "features": [
         "6W elegant LED for soft illumination"
       ]
     },
-
     {
       "id": "11",
       "name": "Delna ZHFR Electrical Wires",
-      "image": "/Images/wires.jpg",
+      "image": "/images/wires.jpg",
       "category": "wires",
       "description": "Zero Halogen Flame Retardant (ZHFR) wires with superior conductivity and safety features.",
       "features": [
@@ -286,161 +281,159 @@
         "Certification": "ISO 9000",
         "Technology": "Unilay with double twisting"
       }
-      
     },
     {
-  "id": "12",
-  "name": "Delna SMPS Adapters for Lights",
-  "image": "/Images/DSC08934--1 (1).jpg",
-  "category": "Lighting",
-  "description": "Reliable Power. Smart Protection. Built to Perform. Delna's SMPS Adapters provide stable 12V DC output, ideal for LED strips, signage, and commercial lighting. Designed with advanced safety features and heavy-duty metal construction for long-lasting industrial use.",
-  "features": [
-    "High Efficiency Output – Stable 12V DC for consistent lighting performance",
-    "Heavy Metal Body with Premium Heat Sink – Optimized thermal management",
-    "High/Low Voltage Protection – Guards against voltage fluctuations",
-    "Overload & Short Circuit Protection – Built-in automatic cut-off mechanism",
-    "Industrial Grade Build – Reliable for continuous use in demanding environments"
-  ],
-  "variants": [
-    {
-      "model": "5A Adapter",
-      "output": "12V DC",
-      "power": "60W",
-      "input_voltage": "220V AC",
-      "body": "Heavy Metal",
-      "protection": ["High/Low Voltage", "Short Circuit"]
+      "id": "12",
+      "name": "Delna SMPS Adapters for Lights",
+      "image": "/images/DSC08934--1 (1).jpg",
+      "category": "Lighting",
+      "description": "Reliable Power. Smart Protection. Built to Perform. Delna's SMPS Adapters provide stable 12V DC output, ideal for LED strips, signage, and commercial lighting. Designed with advanced safety features and heavy-duty metal construction for long-lasting industrial use.",
+      "features": [
+        "High Efficiency Output – Stable 12V DC for consistent lighting performance",
+        "Heavy Metal Body with Premium Heat Sink – Optimized thermal management",
+        "High/Low Voltage Protection – Guards against voltage fluctuations",
+        "Overload & Short Circuit Protection – Built-in automatic cut-off mechanism",
+        "Industrial Grade Build – Reliable for continuous use in demanding environments"
+      ],
+      "variants": [
+        {
+          "model": "5A Adapter",
+          "output": "12V DC",
+          "power": "60W",
+          "input_voltage": "220V AC",
+          "body": "Heavy Metal",
+          "protection": ["High/Low Voltage", "Short Circuit"]
+        },
+        {
+          "model": "10A Adapter",
+          "output": "12V DC",
+          "power": "120W",
+          "input_voltage": "220V AC",
+          "body": "Heavy Metal",
+          "protection": ["High/Low Voltage", "Overload"]
+        }
+      ],
+      "specifications": {
+        "Input Voltage": "220V AC",
+        "Output Voltage": "12V DC",
+        "Power Options": "60W (5A), 120W (10A)",
+        "Construction": "Heavy-duty metal body with heat sink",
+        "Protections": "High/Low Voltage, Overload, Short Circuit"
+      },
+      "applications": [
+        "LED Strip Lighting",
+        "Display Panels",
+        "Outdoor Signage",
+        "Indoor Decorative Lighting",
+        "Retail, Office & Commercial Lighting Systems"
+      ],
+      "why_choose_delna": [
+        "Powerful & Reliable",
+        "Long-Life Components",
+        "Designed for Indian Power Conditions",
+        "Tested for Stability & Safety",
+        "Trusted by Electricians & Installers"
+      ]
     },
     {
-      "model": "10A Adapter",
-      "output": "12V DC",
-      "power": "120W",
-      "input_voltage": "220V AC",
-      "body": "Heavy Metal",
-      "protection": ["High/Low Voltage", "Overload"]
-    }
-  ],
-  "specifications": {
-    "Input Voltage": "220V AC",
-    "Output Voltage": "12V DC",
-    "Power Options": "60W (5A), 120W (10A)",
-    "Construction": "Heavy-duty metal body with heat sink",
-    "Protections": "High/Low Voltage, Overload, Short Circuit"
-  },
-  "applications": [
-    "LED Strip Lighting",
-    "Display Panels",
-    "Outdoor Signage",
-    "Indoor Decorative Lighting",
-    "Retail, Office & Commercial Lighting Systems"
-  ],
-  "why_choose_delna": [
-    "Powerful & Reliable",
-    "Long-Life Components",
-    "Designed for Indian Power Conditions",
-    "Tested for Stability & Safety",
-    "Trusted by Electricians & Installers"
-  ]
-},
-{
-  "id": "13",
-  "name": "Delna Deep Surface Light – 15W High Lumen",
-  "image": "/Images/DSC08958---1.jpg",
-  "category": "Lighting",
-  "description": "Deep Box Compatible. Surface Light Look. Smart Illumination. The Delna Deep Surface Light (15W) offers the elegance of surface lights with the practicality of deep box mounting. Ideal for false ceilings, POP, and PVC panels, it combines high lumen output with sleek design and effortless installation.",
-  "features": [
-    "15 Watt High Brightness – 1350–1500 lumens for strong illumination",
-    "Hybrid Design – Fits into deep box, looks like a surface light",
-    "Downward Light Spread – Even diffusion with no shadows",
-    "Low Heat, Long Life – 25,000+ hours lifespan with thermal protection",
-    "Voltage Stabilized – Operates on 100V–300V AC with surge safety",
-    "Quick Installation – Holder screws included, fits standard deep boxes"
-  ],
-  "specifications": {
-    "Product Name": "Delna Deep Surface Light",
-    "Wattage": "15W",
-    "Lumen Output": "1350–1500 lumens",
-    "Mounting Type": "Deep Box Mounted (Surface Look)",
-    "Voltage Range": "100–300V AC",
-    "Body Material": "Polycarbonate + LED Plate",
-    "Color Temperatures": "6500K (Cool White), 3000K (Warm)",
-    "Lifespan": "25,000+ hours",
-    "Cutout Requirement": "No cutting – fits directly in deep box"
-  },
-  "applications": [
-    "POP & PVC Ceilings",
-    "Living Rooms & Bedrooms",
-    "Retail Counters & Showrooms",
-    "Corridors, Staircases & Lobbies",
-    "Restaurants, Cafes, Clinics"
-  ],
-  "why_choose_delna": [
-    "Looks elegant like surface light",
-    "Fits easily into deep box holders",
-    "Bright, long-lasting performance",
-    "No extra frame or cutout required",
-    "Built for Indian ceilings & junction boxes"
-  ],
-  "call_to_action": "📞 Call Us Today | 📩 Request Bulk Pricing or Distributorship | 🛒 Available for Retail & Projects"
-},
-{
-  "id": "14",
-  "name": "Delna Cylinder Lights",
-  "image": "/Images/DSC08951---1.jpg",
-  "category": "Lighting",
-  "description": "Sleek Look. Spot Focus. Built for Modern Ambience. Delna Cylinder Lights are stylish surface-mounted LED fixtures that combine architectural aesthetics with focused illumination. Designed for interiors that need targeted light with elegant design.",
-  "features": [
-    "Focused Illumination – Ideal for art, walls, counters, and accent lighting",
-    "Premium Aluminium Body – Powder-coated, durable, and sleek",
-    "Surface Mount Installation – No false ceiling needed, mounts easily on any surface",
-    "High Lumen Output – Energy efficient with strong brightness",
-    "Voltage Stabilized – Operates safely on 100V–300V range",
-    "Long Lifespan – 25,000+ hours with thermal protection"
-  ],
-  "variants": [
-    {
-      "wattage": "7W",
-      "body_colors": ["Black", "White", "Grey"],
-      "color_temperatures": ["Cool White (6500K)", "Warm White (3000K)", "Neutral White (4000K)"]
+      "id": "13",
+      "name": "Delna Deep Surface Light – 15W High Lumen",
+      "image": "/images/DSC08958---1.jpg",
+      "category": "Lighting",
+      "description": "Deep Box Compatible. Surface Light Look. Smart Illumination. The Delna Deep Surface Light (15W) offers the elegance of surface lights with the practicality of deep box mounting. Ideal for false ceilings, POP, and PVC panels, it combines high lumen output with sleek design and effortless installation.",
+      "features": [
+        "15 Watt High Brightness – 1350–1500 lumens for strong illumination",
+        "Hybrid Design – Fits into deep box, looks like a surface light",
+        "Downward Light Spread – Even diffusion with no shadows",
+        "Low Heat, Long Life – 25,000+ hours lifespan with thermal protection",
+        "Voltage Stabilized – Operates on 100V–300V AC with surge safety",
+        "Quick Installation – Holder screws included, fits standard deep boxes"
+      ],
+      "specifications": {
+        "Product Name": "Delna Deep Surface Light",
+        "Wattage": "15W",
+        "Lumen Output": "1350–1500 lumens",
+        "Mounting Type": "Deep Box Mounted (Surface Look)",
+        "Voltage Range": "100–300V AC",
+        "Body Material": "Polycarbonate + LED Plate",
+        "Color Temperatures": "6500K (Cool White), 3000K (Warm)",
+        "Lifespan": "25,000+ hours",
+        "Cutout Requirement": "No cutting – fits directly in deep box"
+      },
+      "applications": [
+        "POP & PVC Ceilings",
+        "Living Rooms & Bedrooms",
+        "Retail Counters & Showrooms",
+        "Corridors, Staircases & Lobbies",
+        "Restaurants, Cafes, Clinics"
+      ],
+      "why_choose_delna": [
+        "Looks elegant like surface light",
+        "Fits easily into deep box holders",
+        "Bright, long-lasting performance",
+        "No extra frame or cutout required",
+        "Built for Indian ceilings & junction boxes"
+      ],
+      "call_to_action": "📞 Call Us Today | 📩 Request Bulk Pricing or Distributorship | 🛒 Available for Retail & Projects"
     },
     {
-      "wattage": "12W",
-      "body_colors": ["Black", "White", "Grey"],
-      "color_temperatures": ["Cool White (6500K)", "Warm White (3000K)", "Neutral White (4000K)"]
+      "id": "14",
+      "name": "Delna Cylinder Lights",
+      "image": "/images/DSC08951---1.jpg",
+      "category": "Lighting",
+      "description": "Sleek Look. Spot Focus. Built for Modern Ambience. Delna Cylinder Lights are stylish surface-mounted LED fixtures that combine architectural aesthetics with focused illumination. Designed for interiors that need targeted light with elegant design.",
+      "features": [
+        "Focused Illumination – Ideal for art, walls, counters, and accent lighting",
+        "Premium Aluminium Body – Powder-coated, durable, and sleek",
+        "Surface Mount Installation – No false ceiling needed, mounts easily on any surface",
+        "High Lumen Output – Energy efficient with strong brightness",
+        "Voltage Stabilized – Operates safely on 100V–300V range",
+        "Long Lifespan – 25,000+ hours with thermal protection"
+      ],
+      "variants": [
+        {
+          "wattage": "7W",
+          "body_colors": ["Black", "White", "Grey"],
+          "color_temperatures": ["Cool White (6500K)", "Warm White (3000K)", "Neutral White (4000K)"]
+        },
+        {
+          "wattage": "12W",
+          "body_colors": ["Black", "White", "Grey"],
+          "color_temperatures": ["Cool White (6500K)", "Warm White (3000K)", "Neutral White (4000K)"]
+        },
+        {
+          "wattage": "18W",
+          "body_colors": ["Black", "White", "Grey"],
+          "color_temperatures": ["Cool White (6500K)", "Warm White (3000K)", "Neutral White (4000K)"]
+        }
+      ],
+      "specifications": {
+        "Mounting Type": "Surface Mount (Wall or Ceiling)",
+        "Voltage Range": "100V–300V AC",
+        "Body Material": "Powder-coated Aluminium",
+        "Light Options": "Cool White (6500K), Warm White (3000K), Neutral White (4000K)",
+        "Lifespan": "25,000+ hours"
+      },
+      "applications": [
+        "Home Interiors (Living Room, Dining, Study)",
+        "Showrooms & Retail Counters",
+        "Restaurants & Hotels",
+        "Art Galleries & Exhibitions",
+        "Modern Workspaces"
+      ],
+      "why_choose_delna": [
+        "Modern Look with Targeted Lighting",
+        "Strong Build Quality & Sleek Finish",
+        "Energy Saving with High Brightness",
+        "Hassle-Free Installation",
+        "Backed by Delna’s Trusted Quality"
+      ],
+      "call_to_action": "📞 Call Us for Wholesale & Dealer Rates | 📦 Bulk Orders & Custom Branding Available | 🛒 Order 7W, 12W, or 18W Today!"
     },
-    {
-      "wattage": "18W",
-      "body_colors": ["Black", "White", "Grey"],
-      "color_temperatures": ["Cool White (6500K)", "Warm White (3000K)", "Neutral White (4000K)"]
-    }
-  ],
-  "specifications": {
-    "Mounting Type": "Surface Mount (Wall or Ceiling)",
-    "Voltage Range": "100V–300V AC",
-    "Body Material": "Powder-coated Aluminium",
-    "Light Options": "Cool White (6500K), Warm White (3000K), Neutral White (4000K)",
-    "Lifespan": "25,000+ hours"
-  },
-  "applications": [
-    "Home Interiors (Living Room, Dining, Study)",
-    "Showrooms & Retail Counters",
-    "Restaurants & Hotels",
-    "Art Galleries & Exhibitions",
-    "Modern Workspaces"
-  ],
-  "why_choose_delna": [
-    "Modern Look with Targeted Lighting",
-    "Strong Build Quality & Sleek Finish",
-    "Energy Saving with High Brightness",
-    "Hassle-Free Installation",
-    "Backed by Delna’s Trusted Quality"
-  ],
-  "call_to_action": "📞 Call Us for Wholesale & Dealer Rates | 📦 Bulk Orders & Custom Branding Available | 🛒 Order 7W, 12W, or 18W Today!"
-},
-
     {
       "id": "15",
       "name": "Delna Double PVC Wires",
-      "image": "/Images/wires.jpg",
+      "image": "/images/wires.jpg",
       "category": "wires",
       "description": "High-quality copper conductor with optimal gauge for efficiency and double-layered PVC insulation for enhanced safety and durability.",
       "features": [
@@ -475,7 +468,6 @@
       "image": "https://images.unsplash.com/photo-1635348729202-1dbc159c9d85?q=80&w=1000",
       "description": "High-performance water pumps for efficient water management"
     },
-   
     {
       "id": "lighting",
       "name": "LED Lighting ",
@@ -485,7 +477,7 @@
     {
       "id": "pipes",
       "name": "Conduit Pipes",
-      "image": "/Images/pipes.webp",
+      "image": "/images/pipes.webp",
       "description": "High-quality electrical conduit pipes for safe wiring"
     },
     {
@@ -494,11 +486,9 @@
       "image": "https://images.unsplash.com/photo-1601814933824-fd0b574dd592?q=80&w=1000",
       "description": "Premium electrical wires for superior conductivity"
     }
-
   ]
 }
 
 
 
 
- 

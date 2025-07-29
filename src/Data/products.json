@@ -8,7 +8,6 @@
       "description": "Experience unmatched efficiency and durability with Delna's Submersible Pumps, designed for superior water lifting performance and long-lasting reliability.",
       "features": [
         "Available in 20W & 40W – Powerful performance",
-        "Pure Copper Motor to Wire",
         "Highest Lifting Capacity",
         "Works in Ultra Dim Light",
         "Pure Virgin Magnet",
@@ -18,8 +17,7 @@
       ],
       "specifications": {
         "Power Options": "20W, 40W",
-        "Motor Type": "Pure Copper",
-        "Warranty": "2-Season with piece-to-piece replacement",
+        "Warranty": "12-Month",
         "Special Features": "Ultra Dim Light Operation"
       }
     },
@@ -28,9 +26,8 @@
       "name": "Delna LED Panel Lights",
       "image": "/Images/DSC08917--1.jpg",
       "category": "Lighting",
-      "description": "High-performance, energy-efficient LED panel lights delivering industry-leading 110 lumens per watt illumination.",
+      "description": "High-performance, energy-efficient LED panel lights delivering industry-leading illumination.",
       "features": [
-        "Industry-best 110 lumens per watt efficiency",
         "Built with thick heat sync aluminum sheets",
         "High & low watt protection",
         "Available in round & square designs"
@@ -38,7 +35,6 @@
       "specifications": {
         "Wattage Options": "8W, 12W, 15W, 22W",
         "Sizes Available": "4\", 5\", 6\", 8\" inches",
-        "Lumens Efficiency": "110 lm/W",
         "Construction": "Aluminum heat sync"
       },
       "variants": [
@@ -56,17 +52,17 @@
       "id": "3",
       "name": "Delna LED Flood Lights",
       "image": "/Images/DSC08923-1.jpg",
-      "category": "Lighting",
-      "description": "High-performance, energy-efficient LED panel lights delivering industry-leading 110 lumens per watt illumination.",
+      "category": "Lighting"   ,
+      "description": "Light up large areas with Delna’s high-performance Flood Lights, designed for long life and consistent efficiency.",
       "features": [
-        "Industry-best 110 lumens per watt efficiency",
-        "Built with thick heat sync aluminum sheets",
-        "High & low watt protection",
-        "Available in round & square designs"
+        "Heavy long-life metal body",
+        "High/low voltage protection",
+        "Energy-efficient LED lighting",
+        "Weather-resistant & durable",
+        "Easy to install and operate"
       ],
       "specifications": {
-        "Wattage Options": "8W, 12W, 15W, 22W",
-        "Sizes Available": "4\", 5\", 6\", 8\" inches",
+        "Wattage Options": "50W, 100W, 200W",
         "Lumens Efficiency": "110 lm/W",
         "Construction": "Aluminum heat sync"
       },
@@ -269,7 +265,7 @@
     {
       "id": "14",
       "name": "Delna ZHFR Electrical Wires",
-      "image": "/Images/wires.jpg",
+      "image": "/Images/Zhfr.jpeg",
       "category": "wires",
       "description": "Zero Halogen Flame Retardant (ZHFR) wires with superior conductivity and safety features.",
       "features": [

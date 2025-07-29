@@ -2,15 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { ArrowLeft, X, Star, ZoomIn, Share2 } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from './Footer';
+
 const ProductShowcase = () => {
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
-  const [isZoomed, setIsZoomed] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [zoomPosition, setZoomPosition] = useState({ x: 50, y: 50 });
+  const [zoomStyle, setZoomStyle] = useState({});
+  const [showZoom, setShowZoom] = useState(false);
+  const [fullScreenImage, setFullScreenImage] = useState(false);
 
   // Fetch product data from public folder
   useEffect(() => {
@@ -35,42 +37,94 @@ const ProductShowcase = () => {
 
     fetchProducts();
   }, []);
-  const showHeaderFooter = location.pathname === "/products"; // Sirf About page pe show hoga
-    console.log("Current Path:", location.pathname);
+
+  // Keyboard support for full screen image
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape' && fullScreenImage) {
+        closeFullScreenImage();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [fullScreenImage]);
+
+  const showHeaderFooter = location.pathname === "/products";
+  console.log("Current Path:", location.pathname);
+
   const filteredProducts = selectedCategory === 'all' 
     ? products 
     : products.filter(product => product.category.toLowerCase() === selectedCategory.toLowerCase());
 
   const handleProductClick = (product) => {
     setSelectedProduct(product);
-    document.body.style.overflow = 'hidden'; // Prevent background scroll
-  };
-
-  const handleImageZoom = (e) => {
-    e.stopPropagation(); // Prevent event bubbling
-    e.preventDefault(); // Prevent default behavior
-    
-    if (e && e.target) {
-      const rect = e.target.getBoundingClientRect();
-      const x = ((e.clientX - rect.left) / rect.width) * 100;
-      const y = ((e.clientY - rect.top) / rect.height) * 100;
-      setZoomPosition({ x: Math.min(Math.max(x, 0), 100), y: Math.min(Math.max(y, 0), 100) });
-    }
-    setIsZoomed(true);
+    document.body.style.overflow = 'hidden';
   };
 
   const closeModal = () => {
     setSelectedProduct(null);
-    setIsZoomed(false);
-    document.body.style.overflow = 'auto'; // Restore scroll
+    setFullScreenImage(false);
+    document.body.style.overflow = 'auto';
   };
 
-  const closeZoom = () => {
-    setIsZoomed(false);
+  const openFullScreenImage = () => {
+    setFullScreenImage(true);
+  };
+
+  const closeFullScreenImage = () => {
+    setFullScreenImage(false);
+    setShowZoom(false);
   };
 
   const handleImageError = (e) => {
-    e.target.src = 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop';
+    e.target.style.display = 'none'; // Hide broken images instead of showing placeholder
+  };
+
+  // Zoom functionality for full screen images
+  const handleMouseMove = (e) => {
+    const { left, top, width, height } = e.target.getBoundingClientRect();
+    const x = ((e.clientX - left) / width) * 100;
+    const y = ((e.clientY - top) / height) * 100;
+    
+    setZoomStyle({
+      transformOrigin: `${x}% ${y}%`,
+      transform: 'scale(2.5)',
+    });
+    setShowZoom(true);
+  };
+
+  const handleMouseLeave = () => {
+    setShowZoom(false);
+    setZoomStyle({});
+  };
+
+  const handleShare = async (product) => {
+    const shareData = {
+      title: product.name,
+      text: `Check out this product: ${product.name} - ${product.description}`,
+      url: window.location.href
+    };
+
+    try {
+      if (navigator.share && navigator.canShare(shareData)) {
+        await navigator.share(shareData);
+      } else {
+        // Fallback to copying URL to clipboard
+        await navigator.clipboard.writeText(window.location.href);
+        // You could add a toast notification here
+        alert('Product link copied to clipboard!');
+      }
+    } catch (error) {
+      console.error('Error sharing:', error);
+      // Fallback to copying URL
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        alert('Product link copied to clipboard!');
+      } catch (clipboardError) {
+        console.error('Clipboard error:', clipboardError);
+      }
+    }
   };
 
   if (isLoading) {
@@ -109,29 +163,13 @@ const ProductShowcase = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-          {showHeaderFooter && <Navbar />}
-
-      {/* <header className="bg-white shadow-sm border-b sticky top-0 z-30 backdrop-blur-sm bg-white/95">
-        <div className="max-w-7xl mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">D</span>
-              </div>
-              <div>
-                <h1 className="text-2xl font-bold text-gray-900">Delna Electrical</h1>
-                <p className="text-gray-600 text-sm">Premium Quality Products</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header> */}
+      {showHeaderFooter && <Navbar />}
 
       <div className="max-w-7xl mx-auto px-4 py-8">
         {/* Category Filter */}
-        <div className="mb-8  mt-16">
+        <div className="mb-8 mt-16">
           <h2 className="text-lg font-semibold text-gray-800 mb-4">Product Categories</h2>
-          <div className="flex flex-wrap gap-3 ">
+          <div className="flex flex-wrap gap-3">
             <button
               onClick={() => setSelectedCategory('all')}
               className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 transform hover:scale-105 ${
@@ -174,12 +212,14 @@ const ProductShowcase = () => {
               }}
             >
               <div className="relative overflow-hidden rounded-t-xl">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  onError={handleImageError}
-                  className="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-110"
-                />
+                {product.image && (
+                  <img
+                    src={product.image.startsWith('/') ? product.image : `/${product.image}`}
+                    alt={product.name}
+                    onError={handleImageError}
+                    className="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-125"
+                  />
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="absolute top-3 right-3">
                   <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-medium shadow-lg">
@@ -223,10 +263,8 @@ const ProductShowcase = () => {
           </div>
         )}
       </div>
-          {showHeaderFooter && <Footer />}
-          {/* sazj */}
-          {/* sgh */}
-
+      
+      {showHeaderFooter && <Footer />}
 
       {/* Product Detail Modal */}
       {selectedProduct && (
@@ -239,7 +277,13 @@ const ProductShowcase = () => {
                 <p className="text-blue-600 font-medium">{selectedProduct.category}</p>
               </div>
               <div className="flex items-center space-x-3">
-                <Share2 className="w-6 h-6 text-gray-400 hover:text-blue-600 cursor-pointer transition-colors duration-200" />
+                <button
+                  onClick={() => handleShare(selectedProduct)}
+                  className="p-2 hover:bg-gray-200 rounded-full transition-colors duration-200"
+                  title="Share this product"
+                >
+                  <Share2 className="w-6 h-6 text-gray-400 hover:text-blue-600 transition-colors duration-200" />
+                </button>
                 <button
                   onClick={closeModal}
                   className="p-2 hover:bg-gray-200 rounded-full transition-colors duration-200"
@@ -250,28 +294,28 @@ const ProductShowcase = () => {
             </div>
 
             <div className="grid lg:grid-cols-2 gap-8 p-6 overflow-y-auto max-h-[calc(90vh-80px)]">
-              {/* Image Section with Enhanced Zoom */}
+              {/* Image Section with Amazon/Flipkart Style Zoom */}
               <div className="space-y-4">
                 <div className="relative group">
-                  <img
-                    src={selectedProduct.image}
-                    alt={selectedProduct.name}
-                    onError={handleImageError}
-                    onClick={handleImageZoom}
-                    className="w-full h-96 object-cover rounded-xl cursor-zoom-in hover:shadow-2xl transition-all duration-500 transform hover:scale-[1.02]"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl pointer-events-none"></div>
-                  <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 pointer-events-none">
-                    <div className="bg-white/90 backdrop-blur-sm text-gray-800 px-3 py-1 rounded-full text-sm font-medium flex items-center space-x-2">
-                      <ZoomIn className="w-4 h-4" />
-                      <span>Click to zoom</span>
+                  <div className="relative overflow-hidden rounded-xl bg-gray-100">
+                    <img
+                      src={selectedProduct.image}
+                      alt={selectedProduct.name}
+                      onError={handleImageError}
+                      onClick={openFullScreenImage}
+                      className="w-full h-96 object-cover cursor-pointer transition-transform duration-300 hover:scale-105"
+                    />
+                    
+                    {/* Click to zoom indicator */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                      <div className="absolute top-2 right-2 bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-medium shadow-lg">
+                        🔍 Click to zoom
+                      </div>
+                      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium">
+                        Click for detailed view
+                      </div>
                     </div>
                   </div>
-                  {/* Invisible clickable overlay for better zoom trigger */}
-                  <div 
-                    className="absolute inset-0 cursor-zoom-in"
-                    onClick={handleImageZoom}
-                  ></div>
                 </div>
               </div>
 
@@ -332,50 +376,49 @@ const ProductShowcase = () => {
                     </div>
                   </div>
                 )}
-
-                {/* Action Buttons - Only Get Quote */}
-                <div className="flex justify-center pt-6 border-t border-gray-100">
-                  <button className="px-8 py-3 bg-blue-600 text-white rounded-xl font-medium hover:bg-blue-700 transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl">
-                    Get Quote
-                  </button>
-                </div>
               </div>
             </div>
           </div>
         </div>
       )}
 
-      {/* Enhanced Image Zoom Modal */}
-      {isZoomed && selectedProduct && (
-        <div 
-          className="fixed inset-0 z-60 flex items-center justify-center p-4 bg-black/95 backdrop-blur-sm animate-fadeIn"
-          onClick={closeZoom}
-        >
-          <div className="relative max-w-[95vw] max-h-[95vh] animate-zoomIn" onClick={(e) => e.stopPropagation()}>
+      {/* Full Screen Image Modal with Zoom */}
+      {fullScreenImage && selectedProduct && (
+        <div className="fixed inset-0 z-60 bg-black/95 backdrop-blur-sm animate-fadeIn">
+          <div className="flex items-center justify-center min-h-screen p-4">
+            {/* Close Button */}
             <button
-              onClick={closeZoom}
-              className="absolute -top-12 right-0 z-10 w-10 h-10 bg-white/20 hover:bg-white/30 text-white rounded-full flex items-center justify-center transition-all duration-200 backdrop-blur-sm"
+              onClick={closeFullScreenImage}
+              className="absolute top-4 right-4 z-70 p-3 bg-white/10 hover:bg-white/20 rounded-full transition-colors duration-200"
             >
-              <X className="w-6 h-6" />
+              <X className="w-8 h-8 text-white" />
             </button>
-            <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white">
+
+            {/* Instructions */}
+            <div className="absolute top-4 left-4 z-70 bg-black/50 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm">
+              Hover to zoom • Press ESC to close
+            </div>
+
+            {/* Full Screen Image with Zoom */}
+            <div className="relative max-w-4xl max-h-[90vh] overflow-hidden rounded-lg">
               <img
                 src={selectedProduct.image}
                 alt={selectedProduct.name}
                 onError={handleImageError}
-                className="max-w-full max-h-[85vh] object-contain"
-                style={{
-                  transformOrigin: `${zoomPosition.x}% ${zoomPosition.y}%`,
-                  transform: 'scale(1.5)',
-                  transition: 'transform 0.3s ease-out'
-                }}
+                onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave}
+                className={`w-full h-full object-contain cursor-crosshair transition-transform duration-100 ${
+                  showZoom ? 'zoom-image' : ''
+                }`}
+                style={showZoom ? zoomStyle : {}}
               />
-              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium">
-                {selectedProduct.name}
-              </div>
-            </div>
-            <div className="text-center mt-4">
-              <p className="text-white/80 text-sm">Click outside to close</p>
+              
+              {/* Zoom indicator */}
+              {showZoom && (
+                <div className="absolute bottom-4 right-4 bg-blue-600 text-white px-3 py-2 rounded-full text-sm font-medium shadow-lg">
+                  🔍 2.5x Zoom
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -435,17 +478,6 @@ const ProductShowcase = () => {
           }
         }
         
-        @keyframes zoomIn {
-          from {
-            opacity: 0;
-            transform: scale(0.8);
-          }
-          to {
-            opacity: 1;
-            transform: scale(1);
-          }
-        }
-        
         .line-clamp-2 {
           display: -webkit-box;
           -webkit-line-clamp: 2;
@@ -461,8 +493,27 @@ const ProductShowcase = () => {
           animation: modalSlideUp 0.4s ease-out;
         }
         
-        .animate-zoomIn {
-          animation: zoomIn 0.3s ease-out;
+        /* Zoom lens effect */
+        .zoom-lens {
+          position: absolute;
+          border: 2px solid #3b82f6;
+          cursor: none;
+          pointer-events: none;
+        }
+        
+        /* Smooth zoom transition */
+        .zoom-image {
+          transition: transform 0.1s ease-out;
+        }
+        
+        /* Hide scrollbar for zoom container */
+        .zoom-container::-webkit-scrollbar {
+          display: none;
+        }
+        
+        .zoom-container {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
         }
       `}</style>
     </div>

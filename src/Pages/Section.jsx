@@ -22,8 +22,7 @@ const Section = () => {
         </h2>
         <p className="text-gray-600 mb-6">
 
-At Delna, innovation is at the heart of everything we do. Our dedicated in-house R&D team continuously works to develop cutting-edge lighting and pump solutions that offer superior performance, durability, and efficiency. With a focus on technological advancements, quality enhancement, and energy efficiency, we ensure that every product meets the highest industry standards.
-        </p>
+At Delna, innovation drives everything we do. Our dedicated in-house R&D team is constantly developing cutting-edge solutions across our entire product range — from lighting and wiring to conduit pipes, MCBs, and exhaust systems. With a strong focus on technological advancement, quality enhancement, and energy efficiency, we ensure that every Delna product delivers superior performance, durability, and safety. Each solution is crafted to meet and exceed the highest industry standards, powering modern spaces with reliability and smart engineering.        </p>
         <div className="grid grid-cols-2 gap-4">
           <div className="flex items-center space-x-2">
             <Shield className="w-6 h-6 text-blue-600" />

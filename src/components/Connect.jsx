@@ -8,7 +8,7 @@ function Connect({  }) {
       <h1 className="text-2xl font-bold mb-8"> Delna Connect App</h1>
       <div className="bg-white p-8 rounded-lg shadow-lg">
         <p className="text-gray-600 mb-8">
-          Download the Delna Connect App from Google Play Store or Apple App Store to earn Loyalty Points and join our community.
+          Coming Soon
         </p>
         <div className="flex justify-center gap-4">
           <button className="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-colors">
