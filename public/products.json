@@ -8,7 +8,6 @@
       "description": "Experience unmatched efficiency and durability with Delna's Submersible Pumps, designed for superior water lifting performance and long-lasting reliability.",
       "features": [
         "Available in 20W & 40W – Powerful performance",
-        "Pure Copper Motor to Wire",
         "Highest Lifting Capacity",
         "Works in Ultra Dim Light",
         "Pure Virgin Magnet",
@@ -18,8 +17,6 @@
       ],
       "specifications": {
         "Power Options": "20W, 40W",
-        "Motor Type": "Pure Copper",
-        "Warranty": "2-Season with piece-to-piece replacement",
         "Special Features": "Ultra Dim Light Operation"
       }
     },
@@ -28,9 +25,9 @@
       "name": "Delna LED Panel Lights",
       "image": "/images/DSC08917--1.jpg",
       "category": "Lighting",
-      "description": "High-performance, energy-efficient LED panel lights delivering industry-leading 110 lumens per watt illumination.",
+      "description": "High-performance, energy-efficient LED panel lights delivering industry-leading illumination.",
       "features": [
-        "Industry-best 110 lumens per watt efficiency",
+
         "Built with thick heat sync aluminum sheets",
         "High & low watt protection",
         "Available in round & square designs"
@@ -38,7 +35,6 @@
       "specifications": {
         "Wattage Options": "8W, 12W, 15W, 22W",
         "Sizes Available": "4\", 5\", 6\", 8\" inches",
-        "Lumens Efficiency": "110 lm/W",
         "Construction": "Aluminum heat sync"
       },
       "variants": [
@@ -57,17 +53,16 @@
       "name": "Delna LED Flood Lights",
       "image": "/images/DSC08923-1.jpg",
       "category": "Lighting",
-      "description": "High-performance, energy-efficient LED panel lights delivering industry-leading 110 lumens per watt illumination.",
+      "description": "Brighten up outdoor areas, industrial sites, and large open spaces with Delna’s high-performance Flood Lights, built for long life and consistent efficiency.",
       "features": [
-        "Industry-best 110 lumens per watt efficiency",
-        "Built with thick heat sync aluminum sheets",
-        "High & low watt protection",
-        "Available in round & square designs"
+        " Heavy-duty, long-life metal body",
+        " High/low voltage protection",
+        " Energy-efficient LED lighting",
+        " Weather-resistant and highly durable",
+        " Easy installation and operation"
       ],
       "specifications": {
-        "Wattage Options": "8W, 12W, 15W, 22W",
-        "Sizes Available": "4\", 5\", 6\", 8\" inches",
-        "Lumens Efficiency": "110 lm/W",
+        "Wattage Options": "50W, 100W, 200W",
         "Construction": "Aluminum heat sync"
       },
       "variants": [
@@ -89,7 +84,6 @@
       "description": "Strong. Reliable. Smart protection for every wire. Delna Electrical’s LMS, MMS, and HMS conduit pipes are crafted from high-grade PVC to ensure maximum safety, durability, and ease of installation across a range of applications—from homes to industrial environments.",
       "features": [
         "High Durability: Premium-grade PVC construction",
-        "Fire Retardant: Self-extinguishing material",
         "Weather & Moisture Resistant",
         "Easy Wire Pulling: Smooth inner walls",
         "Non-Conductive: Shock-safe design",
@@ -137,10 +131,10 @@
         "Outdoor & Underground Installations (With HMS grade)"
       ],
       "why_choose_delna": [
-        "Over 2 decades of trust in electrical solutions",
+        "safest for you",
         "Consistent product quality and timely delivery",
         "Tailored solutions for all kinds of wiring applications",
-        "Compliant with ISI & industry standards",
+        "Compliant with industry standards",
         "Trusted by electricians, builders, and institutions alike"
       ]
     },
@@ -170,7 +164,9 @@
       "description": "High-performance surface-mounted LED lights for modern applications.",
       "features": [
         "15W high-performance LED panel",
-        "Sturdy aluminum construction for better heat management"
+        "Sturdy aluminum construction for better heat absorption resulting in longer life",
+        "Available in round and square designs",
+        "Available in Cool White (6500K), Natural white(4000K) and Warm White (3000K)"
       ],
       "variants": [
         {
@@ -191,7 +187,9 @@
       "description": "COB LED lights with superior focus and efficiency.",
       "features": [
         "Available in 7W and 12W",
-        "Features a long aluminum reflector for better light focus"
+        "Features a long aluminum reflector for better light focus",
+        "metal body for durability and aesthetic appeal",
+        "Available in Natural white(4000K) and Warm White (3000K)"
       ]
     },
     {
@@ -205,27 +203,8 @@
         "Rust-resistant aluminium body – durable yet lightweight",
         "Bearing-type motor for smooth rotation and low noise",
         "High air delivery to eliminate fumes, heat, and stale air",
-        "Designed for continuous use in tough industrial conditions"
-      ],
-      "variants": [
-        {
-          "size": "15 Inch",
-          "motor_type": "Bearing Type Motor",
-          "body_material": "Aluminium",
-          "motor_winding": "100% Copper"
-        },
-        {
-          "size": "18 Inch",
-          "motor_type": "Bearing Type Motor",
-          "body_material": "Aluminium",
-          "motor_winding": "100% Copper"
-        },
-        {
-          "size": "24 Inch",
-          "motor_type": "Bearing Type Motor",
-          "body_material": "Aluminium",
-          "motor_winding": "100% Copper"
-        }
+        "Designed for continuous use in tough industrial conditions",
+        "Available in 15, 18, 24 inches"
       ],
       "applications": [
         "Factories & Workshops – Removes smoke, fumes, and heat",
@@ -238,17 +217,20 @@
         "Low maintenance with long service life",
         "Trusted by industrial professionals and technicians",
         "Backed by Delna's quality assurance and service support"
-      ],
-      "call_to_action": "Contact us today for bulk orders, quotes, or installation inquiries. 📞 Call Now | 📩 Request a Quote"
+      ]
     },
     {
       "id": "9",
       "name": "Delna Linear Lights",
       "image": "/images/DSC08932--1.jpg",
-      "category": " Lighting",
+      "category": "Lighting",
       "description": "Slim and efficient linear LED lights with long focus range.",
       "features": [
-        "12W LED with long focus range"
+        " Heavy-duty, long-life metal body",
+        " High/low voltage protection",
+        " Energy-efficient LED lighting",
+        " Weather-resistant and highly durable",
+        " Easy installation and operation"
       ]
     },
     {
@@ -258,13 +240,17 @@
       "category": "Lighting",
       "description": "Elegant LED foot lights for soft illumination.",
       "features": [
-        "6W elegant LED for soft illumination"
+        " Heavy-duty, long-life metal body",
+        " High/low voltage protection",
+        " Energy-efficient LED lighting",
+        " Weather-resistant and highly durable",
+        " Easy installation and operation"
       ]
     },
     {
       "id": "11",
       "name": "Delna ZHFR Electrical Wires",
-      "image": "/images/wires.jpg",
+      "image": "/images/Zhfr.jpg",
       "category": "wires",
       "description": "Zero Halogen Flame Retardant (ZHFR) wires with superior conductivity and safety features.",
       "features": [
@@ -277,9 +263,7 @@
       "specifications": {
         "Available Sizes": "1.0mm², 1.5mm², 2.5mm², 4.0mm², 6.0mm²",
         "Special Variant": "1.5mm² 2-core",
-        "Packaging": "90m and 180m coils",
-        "Certification": "ISO 9000",
-        "Technology": "Unilay with double twisting"
+        "Packaging": "90m and 180m coils"
       }
     },
     {
@@ -373,8 +357,7 @@
         "Bright, long-lasting performance",
         "No extra frame or cutout required",
         "Built for Indian ceilings & junction boxes"
-      ],
-      "call_to_action": "📞 Call Us Today | 📩 Request Bulk Pricing or Distributorship | 🛒 Available for Retail & Projects"
+      ]
     },
     {
       "id": "14",
@@ -388,32 +371,10 @@
         "Surface Mount Installation – No false ceiling needed, mounts easily on any surface",
         "High Lumen Output – Energy efficient with strong brightness",
         "Voltage Stabilized – Operates safely on 100V–300V range",
-        "Long Lifespan – 25,000+ hours with thermal protection"
+        "Long Lifespan – 25,000+ hours with thermal protection",
+        "Available in 7w, 12w, 18w variants",
+        "Available in Natural white(4000K) and Warm White (3000K)"
       ],
-      "variants": [
-        {
-          "wattage": "7W",
-          "body_colors": ["Black", "White", "Grey"],
-          "color_temperatures": ["Cool White (6500K)", "Warm White (3000K)", "Neutral White (4000K)"]
-        },
-        {
-          "wattage": "12W",
-          "body_colors": ["Black", "White", "Grey"],
-          "color_temperatures": ["Cool White (6500K)", "Warm White (3000K)", "Neutral White (4000K)"]
-        },
-        {
-          "wattage": "18W",
-          "body_colors": ["Black", "White", "Grey"],
-          "color_temperatures": ["Cool White (6500K)", "Warm White (3000K)", "Neutral White (4000K)"]
-        }
-      ],
-      "specifications": {
-        "Mounting Type": "Surface Mount (Wall or Ceiling)",
-        "Voltage Range": "100V–300V AC",
-        "Body Material": "Powder-coated Aluminium",
-        "Light Options": "Cool White (6500K), Warm White (3000K), Neutral White (4000K)",
-        "Lifespan": "25,000+ hours"
-      },
       "applications": [
         "Home Interiors (Living Room, Dining, Study)",
         "Showrooms & Retail Counters",
@@ -427,20 +388,20 @@
         "Energy Saving with High Brightness",
         "Hassle-Free Installation",
         "Backed by Delna’s Trusted Quality"
-      ],
-      "call_to_action": "📞 Call Us for Wholesale & Dealer Rates | 📦 Bulk Orders & Custom Branding Available | 🛒 Order 7W, 12W, or 18W Today!"
+      ]
     },
     {
       "id": "15",
-      "name": "Delna Double PVC Wires",
+      "name": "Delna HRFR Wires",
       "image": "/images/wires.jpg",
       "category": "wires",
       "description": "High-quality copper conductor with optimal gauge for efficiency and double-layered PVC insulation for enhanced safety and durability.",
       "features": [
         "High-quality copper conductor",
-        "Double-layered PVC insulation",
+        "Double-layered PVC insulation designed for safety and durability",
         "Better resistance to heat, moisture, and environmental factors",
-        "Meter marking for accurate installation measurements"
+        "Meter marking for accurate installation measurements",
+        "Double twisted with Unilay technology for superior flexibility and strength"
       ],
       "available_sizes": [
         "1.0 mm²", "1.5 mm²", "2.5 mm²", "4.0 mm²", "6.0 mm²",

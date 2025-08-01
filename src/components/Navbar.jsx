@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Home, Info, Phone, Package,HelpCircle } from 'lucide-react';
+import { Menu, X, Home, Info, Phone, Package, HelpCircle } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
@@ -17,10 +17,9 @@ const Navbar = () => {
   const navItems = [
     { name: 'Home', icon: <Home size={18} />, to: '/' },
     { name: 'About', icon: <Info size={18} />, to: '/About' },
-    { name: 'Products', icon: <Package size={18} />, to:"/products" },
+    { name: 'Products', icon: <Package size={18} />, to: "/products" },
     { name: 'Contact', icon: <Phone size={18} />, to: "/Contact" },
     { name: 'FAQ', icon: <HelpCircle size={18} />, to: "/Faq-Page" },
-
   ];
 
   return (
@@ -29,10 +28,17 @@ const Navbar = () => {
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <div className="flex-shrink-0">
-            <span className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent">
-              Delna
-            </span>
+          {/* Logo + Company Name */}
+          <div className="flex items-center flex-shrink-0 space-x-3">
+            <img
+              src="/images/logo.png"
+              alt="Delna Logo"
+              className="h-20 w-20 object-contain" // logo aur bada
+              style={{ maxWidth: 80, maxHeight: 80 }}
+            />
+            {/* <span className="text-lg font-bold bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent">
+              Delna Electric
+            </span> */}
           </div>
           
           {/* Desktop Navigation */}

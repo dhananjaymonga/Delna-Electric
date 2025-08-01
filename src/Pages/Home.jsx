@@ -11,7 +11,7 @@ const Home = () => {
         <div className="relative max-w-7xl mx-auto px-4 h-full flex items-center">
           <div className="animate-fade-in">
             <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6">
-              Welcome to <span className="bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent">Delna</span>
+              Welcome to <span className="bg-sky-800 bg-clip-text text-transparent">Delna Electric</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-2xl mb-8">
               Experience innovation and excellence in everything we do. Discover our world-class products and services.
