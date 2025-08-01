@@ -420,6 +420,114 @@
         "Commercial installations",
         "Industrial applications"
       ]
+    },
+    {
+      "id": "16",
+      "name": "Delna Track Lights – 20W & 30W",
+      "image": "/images/DSC01064-000.jpg",
+      "category": "Lighting",
+      "description": "Experience premium lighting with our 20W and 30W Track Lights, designed to offer high brightness and focused illumination with energy efficiency. Ideal for both residential and commercial spaces.",
+      "features": [
+        "Color temperatures: 3000K (Warm White) and 4000K (Neutral White)",
+        "High lumen output for sharp, clear lighting",
+        "Sleek, modern design with adjustable focus",
+        "Lightweight and durable non-metal housing",
+        "Easy installation on standard track rails"
+      ],
+      "specifications": {
+        "Wattage Options": "20W, 30W",
+        "Color Temperatures": "3000K (Warm White), 4000K (Neutral White)",
+        "Body Material": "Non-metal, lightweight housing",
+        "Mounting": "Standard track rail"
+      },
+      "applications": [
+        "Showrooms",
+        "Retail displays",
+        "Home interiors",
+        "Commercial spaces"
+      ]
+    },
+    {
+      "id": "17",
+      "name": "Delna 2W Spot Lights",
+      "image": "/images/DSC08924---0.jpg",
+      "category": "Lighting",
+      "description": "Add a pop of color or highlight key areas with our energy-efficient 2W Spot Lights, perfect for accent lighting in homes, showrooms, events, and decor setups.",
+      "specifications": {
+        "Available Colors": "Red, Green, Blue, Pink, Cool White (CW), Neutral White (NW), Warm White (WW)"
+      },
+      "features": [
+        "Compact and focused beam for accent lighting",
+        "Energy-efficient 2-watt power usage",
+        "Ideal for mood lighting, decor, and highlighting corners or objects",
+        "Compatible with standard fittings",
+        "Light up with color. Small in size, big on impact."
+      ]
+    },
+    {
+      "id": "18",
+      "name": "Delna MCBs & RCCBs",
+      "image": "/images/mcb-rccb.jpg",
+      "category": "Protection",
+      "description": "Protect your electrical circuits with Delna’s high-performance MCBs and RCCBs, engineered for durability, precision, and safety in both residential and industrial applications.",
+      "features": [
+        "Miniature Circuit Breakers (MCB): Type C Curve – Suitable for general use and inductive loads; trips between 5-10 times the rated current.",
+        "MD Trip (Magnetic Dual Trip) Facility – Provides fast disconnection during short circuits and ensures thermal protection against overload.",
+        "Mid Trip Feature – The switch handle clearly shows mid-position when tripped, helping you easily identify fault conditions—neither ON nor OFF, but a visible 'trip' status.",
+        "RCCB (Residual Current Circuit Breaker): Detects and disconnects leakage currents to prevent electric shocks.",
+        "Ensures enhanced protection for human safety and fire prevention."
+      ],
+      "specifications": {
+        "Available Configurations": "2 Pole, 3 Pole, TPN (Triple Pole with Neutral)",
+        "MCB Curve": "Type C",
+        "Trip Facility": "Magnetic Dual Trip (MD Trip)",
+        "Mid Trip": "Yes",
+        "RCCB": "Leakage current detection and disconnection"
+      },
+      "why_choose_delna": [
+        "Accurate tripping mechanism",
+        "High breaking capacity",
+        "Flame-retardant housing",
+        "Compact and easy-to-install design"
+      ]
+    },
+    {
+      "id": "19",
+      "name": "Delna Purse Lights",
+      "image": "/images/DSC01056--1.jpg",
+      "category": "Lighting",
+      "description": "Illuminate with precision using Delna Purse Lights, crafted with a metal body and projector reflector for sharp, focused beams — perfect for display and ambient lighting.",
+      "features": [
+        "Durable metal make for long-lasting performance",
+        "Projector reflector lens for focused beam output",
+        "Ideal for showcases, showrooms, art lighting, and decorative use",
+        "Sleek black finish for a modern aesthetic"
+      ],
+      "specifications": {
+        "Available Variants": "1+1 (6W), 2+2 (12W), 3+3 (18W)",
+        "Color Temperature": "3000K (Warm White) – Available in black body only"
+      }
+    },
+    {
+      "id": "20",
+      "name": "Delna 4-Way Projector Light",
+      "image": "/images/DSC08951---1.jpg",
+      "category": "Lighting",
+      "description": "Create dramatic visual highlights with Delna’s 4-Way Light, engineered for performance and style. Designed with a robust metal body and projector-type optics, this fixture delivers sharp, directional lighting from all four sides—ideal for accentuating architectural elements.",
+      "features": [
+        "Projector-style beams for enhanced focus",
+        "Heavy metal construction for long life and effective heat dissipation",
+        "Premium matte black body for a modern, minimal look",
+        "Uniform beam spread and architectural appeal",
+        "Best-in-class reliability"
+      ],
+      "specifications": {
+        "Wattage": "12W total (3W x 4 directions)",
+        "Color Temperature": "3000K – Soft Warm White glow",
+        "Body Material": "Heavy metal",
+        "Finish": "Premium matte black",
+        "Application": "Ideal for facades, pillars, entrance walls, and feature corners"
+      }
     }
   ],
   "categories": [
