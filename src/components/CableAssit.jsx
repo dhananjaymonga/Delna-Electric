@@ -276,7 +276,7 @@ export default function CableAssistCalculator() {
             </div>
           ) : (
             <div className="p-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-6 text-center">Current Carrying Capacity</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-6 text-center">Current Carrying Capacity*</h3>
               
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {/* Copper */}
@@ -309,6 +309,7 @@ export default function CableAssistCalculator() {
               <div className="mt-8 p-4 bg-blue-50 border border-blue-200 rounded-lg">
                 <h5 className="font-semibold text-blue-800 mb-2">Notes:</h5>
                 <ul className="text-sm text-blue-700 space-y-1">
+                  <li>D</li>
                   <li>• Values are for ambient temperature of 30°C</li>
                   <li>• For bundled cables, apply derating factors</li>
                   <li>• Copper has higher conductivity than aluminum</li>
@@ -325,10 +326,11 @@ export default function CableAssistCalculator() {
             {/* Home Button */}
             <button
               onClick={goToHome}
-              className="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 group"
+              className="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 group flex flex-col items-center"
               title="Go to Home"
             >
               <Home size={24} className="group-hover:scale-110 transition-transform" />
+              <span className="font-semibold text-xs mt-1">Home</span>
             </button>
             
             {/* Scroll to Top Button */}

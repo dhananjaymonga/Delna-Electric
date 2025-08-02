@@ -71,10 +71,10 @@ const faqCategories = [
         question: "Are LED lights better than traditional bulbs?",
         answer: "Yes, LED lights consume up to 80% less energy, last much longer, and provide brighter, more efficient lighting compared to traditional bulbs."
       },
-      {
-        question: "Do you offer smart lighting solutions?",
-        answer: "Yes, we offer smart LED lighting options with features like dimmable brightness, motion sensors, and remote control via mobile apps."
-      },
+      // {
+      //   question: "Do you offer smart lighting solutions?",
+      //   answer: "Yes, we offer smart LED lighting options with features like dimmable brightness, motion sensors, and remote control via mobile apps."
+      // },
       {
         question: "How long do your LED lights last?",
         answer: "Our LED lights have an average lifespan of 50,000 to 100,000 hours, making them a long-term, cost-effective solution."
@@ -87,7 +87,7 @@ const faqCategories = [
     description: "Learn more about our company and services",
     questions: [
       {
-        question: "Where is Delna Electricals Pvt. Ltd. located?",
+        question: "Where is Delna Electricals",
         answer: "We are a Delhi-based company established in 2015, with operations in 7 states and a strong network of 450+ dealers."
       },
       {

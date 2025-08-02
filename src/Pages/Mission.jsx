@@ -38,8 +38,7 @@ function App() {
               <div className="space-y-6">
                 <h2 className="text-3xl font-bold text-blue-600">Our Mission</h2>
                 <p className="text-gray-600 leading-relaxed">
-                  At Delna Electricals Pvt. Ltd., our mission is to illuminate the world with the safest, most efficient, and innovative electrical solutions. We are committed to delivering the highest quality electrical wires, conduit pipes, and lighting solutions that redefine safety, durability, and performance.
-                </p>
+We are committed to delivering high-quality electrical products that redefine safety, durability, and performance — empowering both homes and industries with smart, reliable energy solutions.                </p>
               </div>
               <div className="space-y-6">
                 <h2 className="text-3xl font-bold text-blue-600">Our Vision</h2>

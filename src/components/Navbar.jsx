@@ -33,8 +33,8 @@ const Navbar = () => {
             <img
               src="/images/logo.png"
               alt="Delna Logo"
-              className="h-20 w-20 object-contain" // logo aur bada
-              style={{ maxWidth: 80, maxHeight: 80 }}
+              className="h-70 w-70 object-contain" // logo aur bada
+              style={{ maxWidth: 100, maxHeight: 100 }}
             />
             {/* <span className="text-lg font-bold bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent">
               Delna Electric

@@ -66,9 +66,9 @@ const Footer = () => {
           <div className="reveal-on-scroll reveal-delay-300">
           <h3 className="text-xl font-bold mb-4">About Delna</h3>
             <ul className="space-y-3">
-              <li><Link to="/products/electric-guitars" className="text-muted-foreground hover:text-primary transition-colors">Electric Guitars</Link></li>
+              <li><Link to="/CableAssitCalculator" className="text-muted-foreground hover:text-primary transition-colors">CableAssitCalculator</Link></li>
               <li><Link to="/products/synthesizers" className="text-muted-foreground hover:text-primary transition-colors">Synthesizers</Link></li>
-              <li><Link to="/products/midi-controllers" className="text-muted-foreground hover:text-primary transition-colors">MIDI Controllers</Link></li>
+              <li><Link to="/CableAssit" className="text-muted-foreground hover:text-primary transition-colors">MOTOR CABLE SIZE CALCULATOR</Link></li>
               <li><Link to="/products/drum-machines" className="text-muted-foreground hover:text-primary transition-colors">Drum Machines</Link></li>
               <li><Link to="/products/accessories" className="text-muted-foreground hover:text-primary transition-colors">Accessories</Link></li>
             </ul>

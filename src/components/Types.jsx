@@ -29,7 +29,7 @@ function Home() {
         <div className="flex justify-center mb-4">
           <Calculator className="w-16 h-16 text-orange-500" />
         </div>
-        <h2 className="text-xl font-bold mb-4">CABLE ASSIST CALCULATOR</h2>
+        <h2 className="text-xl font-bold mb-4">MOTOR CABLE SIZE CALCULATOR</h2>
         <p className="text-gray-600">Help us, Help You through our Cabel Assist Calculator</p>
       </div>
 

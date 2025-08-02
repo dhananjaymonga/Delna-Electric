@@ -194,7 +194,7 @@ function App() {
             <Counter end={2} label="Warehouses" />
             <Counter end={7} label="States" />
             <Counter end={10} label="Year of Industries Expertise" />
-            <Counter end={200} label="Channel Partner" />
+            <Counter end={450} label="Channel Partner" />
           </div>
         </div>
       </section>
