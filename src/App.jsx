@@ -15,7 +15,7 @@ import Section from "./Pages/Section.jsx";
 import  Mission from "./Pages/Mission.jsx"
 import DealershipForm from "./Pages/DealerShip.jsx";
 import Products from "./Pages/Product.jsx";
-
+import TestimonialSlider from "./Pages/TestimonialSlider.jsx";
 function App() {
   const [showPopup, setShowPopup] = useState(false);
 
@@ -32,6 +32,7 @@ function App() {
       <Home />
       {/* <DealershipForm/> */}
       <Types />
+      <TestimonialSlider/>
       <Mission/>
       <Section/>
       <About />
