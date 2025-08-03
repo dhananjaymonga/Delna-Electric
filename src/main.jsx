@@ -18,6 +18,7 @@ import Product from "./Pages/Product.jsx";
 import { ProductProvider } from "./context/ProductContext.jsx";
 import ProductDetails from "./Pages/ProductDetails.jsx";
 import CalculatorPage from "./Pages/Calculator.jsx";
+import DealershipForm from "./Pages/DealerShip.jsx";
 
 
 // Define routes properly
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
   {
     path: "/CableAssitCalculator",
     element: <CalculatorPage />,
+  },
+  {
+    path: "/DealershipForm",
+    element: <DealershipForm />,
   },
   {
     path: "/pdfdowload",

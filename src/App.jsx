@@ -13,6 +13,7 @@ import Footer from "./Pages/Footer.jsx";
 // import Someui from "./components/Someui.jsx"
 import Section from "./Pages/Section.jsx";
 import  Mission from "./Pages/Mission.jsx"
+import DealershipForm from "./Pages/DealerShip.jsx";
 import Products from "./Pages/Product.jsx";
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
       
       <Navbar />
       <Home />
+      {/* <DealershipForm/> */}
       <Types />
       <Mission/>
       <Section/>

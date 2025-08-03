@@ -111,7 +111,7 @@ const ContactPageClone = () => {
     filter: 'brightness(0.2)',
   }}
 />
-<div className="max-w-7xl mx-auto relative z-10">
+{/* <div className="max-w-7xl mx-auto relative z-10">
   <div className="grid md:grid-cols-4 gap-8">
     {[
       { number: "250+", label: "Projects Completed" },
@@ -131,7 +131,7 @@ const ContactPageClone = () => {
       </div>
     ))}
   </div>
-</div>
+</div> */}
 </section>
     <div className="min-h-screen bg-white p-4">
       <div className="container mx-auto grid md:grid-cols-2 gap-8  mt-22">

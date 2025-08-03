@@ -34,7 +34,7 @@ const faqCategories = [
         answer: "The choice depends on the electrical load, application, and environment. Our experts can guide you in selecting the best wire based on your requirements."
       },
       {
-        question: "Do your wires meet national safety standards?",
+        question: "Do our wires meet national safety standards?",
         answer: "Absolutely! Our wires are ISI-certified and meet all Bureau of Indian Standards (BIS) regulations, ensuring safety and reliability."
       }
     ]

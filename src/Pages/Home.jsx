@@ -46,15 +46,15 @@ const Home = () => {
       buttonText: 'Read More',
       buttonAction: () => console.log('Navigate to about')
     },
-    {
-      id: 2,
-      image: 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
-      title: 'Advanced Technology',
-      subtitle: 'Cutting-Edge Solutions',
-      description: 'Harness the power of advanced electrical technology with our innovative solutions designed for the future.',
-      buttonText: 'Explore Products',
-      buttonAction: () => console.log('Navigate to products')
-    },
+    // {
+    //   id: 2,
+    //   image: 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
+    //   title: 'Advanced Technology',
+    //   subtitle: 'Cutting-Edge Solutions',
+    //   description: 'Harness the power of advanced electrical technology with our innovative solutions designed for the future.',
+    //   buttonText: 'Explore Products',
+    //   buttonAction: () => console.log('Navigate to products')
+    // },
     {
       id: 3,
       image: 'https://images.unsplash.com/photo-1581092921461-eab62e97a780?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',

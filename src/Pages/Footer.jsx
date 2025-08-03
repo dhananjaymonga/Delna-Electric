@@ -69,7 +69,7 @@ const Footer = () => {
               <li><Link to="/CableAssitCalculator" className="text-muted-foreground hover:text-primary transition-colors">CableAssitCalculator</Link></li>
               <li><Link to="/products/synthesizers" className="text-muted-foreground hover:text-primary transition-colors">Synthesizers</Link></li>
               <li><Link to="/CableAssit" className="text-muted-foreground hover:text-primary transition-colors">MOTOR CABLE SIZE CALCULATOR</Link></li>
-              <li><Link to="/products/drum-machines" className="text-muted-foreground hover:text-primary transition-colors">Drum Machines</Link></li>
+              <li><Link to="/DealershipForm" className="text-muted-foreground hover:text-primary transition-colors">DealershipForm</Link></li>
               <li><Link to="/products/accessories" className="text-muted-foreground hover:text-primary transition-colors">Accessories</Link></li>
             </ul>
           </div>
