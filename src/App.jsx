@@ -32,11 +32,11 @@ function App() {
       <Home />
       {/* <DealershipForm/> */}
       <Types />
-      <TestimonialSlider/>
       <Mission/>
       <Section/>
       <About />
       <Products />
+      <TestimonialSlider/>
       {/* <Contact /> */}
       <FAQ />
       <Footer/>

@@ -1,98 +1,3 @@
-// import React, { useState, useEffect } from 'react';
-// import { Menu, X, Home, Info, Phone, Package, HelpCircle } from 'lucide-react';
-// import { NavLink } from 'react-router-dom';
-
-// const Navbar = () => {
-//   const [isOpen, setIsOpen] = useState(false);
-//   const [scrolled, setScrolled] = useState(false);
-
-//   useEffect(() => {
-//     const handleScroll = () => {
-//       setScrolled(window.scrollY > 20);
-//     };
-//     window.addEventListener('scroll', handleScroll);
-//     return () => window.removeEventListener('scroll', handleScroll);
-//   }, []);
-
-//   const navItems = [
-//     { name: 'Home', icon: <Home size={18} />, to: '/' },
-//     { name: 'About', icon: <Info size={18} />, to: '/About' },
-//     { name: 'Products', icon: <Package size={18} />, to: "/products" },
-//     { name: 'Contact', icon: <Phone size={18} />, to: "/Contact" },
-//     { name: 'FAQ', icon: <HelpCircle size={18} />, to: "/Faq-Page" },
-//   ];
-
-//   return (
-//     <nav className={`fixed w-full z-50 transition-all duration-300 ${
-//       scrolled ? 'bg-white/80 backdrop-blur-md shadow-lg' : 'bg-transparent'
-//     }`}>
-//       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-//         <div className="flex items-center justify-between h-16">
-//           {/* Logo + Company Name */}
-//           <div className="flex items-center flex-shrink-0 space-x-3">
-//             <img
-//               src="/images/logo.png"
-//               alt="Delna Logo"
-//               className="h-70 w-70 object-contain" // logo aur bada
-//               style={{ maxWidth: 100, maxHeight: 100 }}
-//             />
-//             {/* <span className="text-lg font-bold bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent">
-//               Delna Electric
-//             </span> */}
-//           </div>
-          
-//           {/* Desktop Navigation */}
-//           <div className="hidden md:block">
-//             <div className="ml-10 flex items-center space-x-8">
-//               {navItems.map((item) => (
-//                 <NavLink
-//                   key={item.name}
-//                   to={item.to}
-//                   className="group flex items-center space-x-2 text-gray-700 hover:text-purple-600 transition-colors duration-300"
-//                 >
-//                   <span className="transform group-hover:scale-110 transition-transform duration-300">
-//                     {item.icon}
-//                   </span>
-//                   <span>{item.name}</span>
-//                 </NavLink>
-//               ))}
-//             </div>
-//           </div>
-
-//           {/* Mobile menu button */}
-//           <div className="md:hidden">
-//             <button
-//               onClick={() => setIsOpen(!isOpen)}
-//               className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-purple-600 focus:outline-none"
-//             >
-//               {isOpen ? <X size={24} /> : <Menu size={24} />}
-//             </button>
-//           </div>
-//         </div>
-//       </div>
-
-//       {/* Mobile Navigation */}
-//       <div className={`md:hidden transition-all duration-300 ease-in-out ${
-//         isOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'
-//       } overflow-hidden bg-white/80 backdrop-blur-md`}>
-//         <div className="px-2 pt-2 pb-3 space-y-1">
-//           {navItems.map((item) => (
-//             <NavLink
-//               key={item.name}
-//               to={item.to}
-//               className="flex items-center space-x-2 px-3 py-2 rounded-md text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-300"
-//             >
-//               {item.icon}
-//               <span>{item.name}</span>
-//             </NavLink>
-//           ))}
-//         </div>
-//       </div>
-//     </nav>
-//   );
-// };
-
-// export default Navbar;
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Home, Info, Phone, Package, HelpCircle, Zap, ChevronDown } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
@@ -164,38 +69,15 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-24"> {/* Much bigger height */}
             
-            {/* Logo + Company Name with Enhanced Animation */}
-            <div className="flex items-center flex-shrink-0 space-x-4 group">
-              <div className="relative">
-                {/* Animated background circle */}
-                <div className="absolute inset-0 bg-gradient-to-r from-sky-400 to-sky-600 rounded-full opacity-20 scale-110 group-hover:scale-125 group-hover:opacity-30 transition-all duration-500"></div>
-                
-                {/* Logo with multiple animations */}
-                <img
-                  src="/images/logo.png"
-                  alt="Delna Logo"
-                  className="relative h-20 w-20 object-contain transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 drop-shadow-lg"
-                  style={{ maxWidth: 160, maxHeight: 160 }}
-                />
-                
-                {/* Pulse effect */}
-                <div className="absolute inset-0 rounded-full bg-sky-400 opacity-0 group-hover:opacity-20 group-hover:animate-ping"></div>
-              </div>
-              
-              {/* Company name with enhanced styling */}
-              <div className="flex flex-col">
-                <span className="text-2xl font-bold bg-gradient-to-r from-sky-800 via-sky-600 to-sky-800 bg-clip-text text-transparent animate-gradient-x">
-                  Delna Electric
-                </span>
-                <span className="text-xs text-sky-600 font-medium tracking-wider opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                  POWERING YOUR FUTURE
-                </span>
-              </div>
-              
-              {/* Electric spark animation */}
-              <div className="opacity-0 group-hover:opacity-100 transition-all duration-300">
-                <Zap className="h-6 w-6 text-sky-500 animate-pulse" />
-              </div>
+            {/* Logo Only - Clean and Simple */}
+            <div className="flex items-center flex-shrink-0">
+              {/* Logo - increased size */}
+              <img
+                src="/images/logo.png"
+                alt="Delna Logo"
+                className="h-32 w-32 object-contain transition-all duration-300 drop-shadow-lg"
+                style={{ maxWidth: 220, maxHeight: 220 }}
+              />
             </div>
                      
             {/* Desktop Navigation with Enhanced Animations */}
