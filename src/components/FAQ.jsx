@@ -188,11 +188,11 @@ function App() {
     <>
     {showHeaderFooter && <Navbar />}
 
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 ">
       <div className="max-w-4xl mx-auto px-4 py-16">
         <div className="text-center mb-12 animate-fade-in">
-          <Shield className="w-16 h-16 text-purple-600 mx-auto mb-4" />
-          <h1 className="text-4xl font-bold text-purple-600 mb-4">
+          <Shield className="w-16 h-16 text-purple-600 mx-auto mb-4 mt-8"  />
+          <h1 className="text-4xl font-bold text-purple-600 mb-4 ">
             Frequently Asked Questions
           </h1>
           <p className="text-gray-600 max-w-2xl mx-auto">

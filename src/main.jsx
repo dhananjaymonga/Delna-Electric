@@ -19,6 +19,7 @@ import { ProductProvider } from "./context/ProductContext.jsx";
 import ProductDetails from "./Pages/ProductDetails.jsx";
 import CalculatorPage from "./Pages/Calculator.jsx";
 import DealershipForm from "./Pages/DealerShip.jsx";
+import Blog from "./Pages/BlogPages.jsx";
 
 
 // Define routes properly
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
   {
     path: "/Contact",
     element: <Contact />,
+  },
+  {
+    path: "/Blog",
+    element: <Blog />,
   },
   {
     path: "/Faq-Page",

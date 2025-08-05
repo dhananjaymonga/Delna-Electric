@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Home, Info, Phone, Package, HelpCircle, Zap, ChevronDown } from 'lucide-react';
+import { Menu, X, Home, Info, Phone, Package, HelpCircle, Zap, ChevronDown, BookOpen } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
@@ -32,13 +32,13 @@ const Navbar = () => {
       name: 'Products', 
       icon: <Package size={20} />, 
       to: "/products",
-      hasDropdown: true,
-      dropdownItems: [
-        { name: 'Accessories', to: '/accessories' },
-        { name: 'Switches', to: '/switches' },
-        { name: 'Cables', to: '/cables' },
-        { name: 'Tools', to: '/tools' }
-      ]
+      hasDropdown: false
+    },
+    { 
+      name: 'Blog', 
+      icon: <BookOpen size={20} />, 
+      to: "/Blog",
+      hasDropdown: false
     },
     { 
       name: 'Contact', 
