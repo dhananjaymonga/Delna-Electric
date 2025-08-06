@@ -25,7 +25,7 @@ const Navbar = () => {
     { 
       name: 'About', 
       icon: <Info size={20} />, 
-      to: '/About',
+      to: '/about',
       hasDropdown: false
     },
     { 
@@ -37,19 +37,19 @@ const Navbar = () => {
     { 
       name: 'Blog', 
       icon: <BookOpen size={20} />, 
-      to: "/Blog",
+      to: "/blog",
       hasDropdown: false
     },
     { 
       name: 'Contact', 
       icon: <Phone size={20} />, 
-      to: "/Contact",
+      to: "/contact",
       hasDropdown: false
     },
     { 
       name: 'FAQ', 
       icon: <HelpCircle size={20} />, 
-      to: "/Faq-Page",
+      to: "/faq",
       hasDropdown: false
     },
   ];

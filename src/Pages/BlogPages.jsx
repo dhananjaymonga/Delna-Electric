@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Search, Calendar, Tag, Eye, ArrowRight, Zap, Shield, Lightbulb, Factory, Home, Wrench, ChevronUp, X } from 'lucide-react';
+import { Search, Calendar, Tag, Eye, ArrowRight, Zap, Shield, Lightbulb, Factory, Home, Wrench, ChevronUp, X, Clock } from 'lucide-react';
 
 const DelnaElectricalsBlog = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -11,11 +11,10 @@ const DelnaElectricalsBlog = () => {
   const [showModal, setShowModal] = useState(false);
   const observerRef = useRef();
 
-  // Blog data from the document
+  // Blog data
   const blogPosts = [
     {
       id: 1,
-      day: 1,
       title: "Why Quality Electrical Wires Matter in Modern Homes",
       excerpt: "Electrical wiring is the hidden lifeline of every modern home, yet it's often overlooked until problems arise...",
       content: `Electrical wiring is the hidden lifeline of every modern home, yet it's often overlooked until problems arise. Whether you're constructing a new house or upgrading an old one, the quality of wires used plays a vital role in safety, performance, and long-term cost savings.
@@ -34,11 +33,11 @@ So, before you finalize your wiring, remember: good wires don't just carry elect
       category: "Home Wiring",
       readTime: "3 min read",
       icon: Home,
-      gradient: "from-blue-500 to-cyan-500"
+      gradient: "from-blue-500 to-cyan-500",
+      publishDate: "Dec 15, 2024"
     },
     {
       id: 2,
-      day: 2,
       title: "ZHFR vs PVC Wires: Which One Should You Choose?",
       excerpt: "When it comes to wiring, one size—or type—does not fit all. The choice between ZHFR and PVC wires depends on your application...",
       content: `When it comes to wiring, one size—or type—does not fit all. The choice between ZHFR and PVC wires depends on your application, safety requirements, and budget.
@@ -51,95 +50,96 @@ At Delna Electricals, we manufacture both PVC and ZHFR wires with precise insula
       category: "Wire Types",
       readTime: "4 min read",
       icon: Shield,
-      gradient: "from-green-500 to-teal-500"
+      gradient: "from-green-500 to-teal-500",
+      publishDate: "Dec 12, 2024"
     },
     {
       id: 3,
-      day: 4,
       title: "Benefits of Double PVC Wires for Residential Wiring",
       excerpt: "Double PVC wires are quickly becoming the preferred choice for modern residential wiring—and for good reason...",
       content: "Double PVC wires are quickly becoming the preferred choice for modern residential wiring—and for good reason. With two layers of insulation, these wires offer enhanced protection from heat, abrasion, moisture, and even minor mechanical damage.",
       category: "Home Wiring",
       readTime: "3 min read",
       icon: Home,
-      gradient: "from-purple-500 to-pink-500"
+      gradient: "from-purple-500 to-pink-500",
+      publishDate: "Dec 10, 2024"
     },
     {
       id: 4,
-      day: 5,
       title: "Fire Safety in Wiring: Role of Flame Retardant Cables",
       excerpt: "Fire safety isn't just about smoke detectors—it starts with the right wiring...",
       content: "Fire safety isn't just about smoke detectors—it starts with the right wiring. Flame Retardant and ZHFR cables are engineered to withstand high temperatures and prevent fire from spreading through electrical circuits.",
       category: "Safety",
       readTime: "5 min read",
       icon: Shield,
-      gradient: "from-red-500 to-orange-500"
+      gradient: "from-red-500 to-orange-500",
+      publishDate: "Dec 8, 2024"
     },
     {
       id: 5,
-      day: 6,
       title: "How to Choose the Right MCB for Your Home or Factory",
       excerpt: "Miniature Circuit Breakers (MCBs) protect your circuits from overload and short circuits—but choosing the right one is key...",
       content: "Miniature Circuit Breakers (MCBs) protect your circuits from overload and short circuits—but choosing the right one is key. For homes: Use single-pole or double-pole MCBs based on room loads and heavy appliances. For factories and commercial spaces: Go for TP or TPN MCBs.",
       category: "Components",
       readTime: "4 min read",
       icon: Wrench,
-      gradient: "from-indigo-500 to-blue-500"
+      gradient: "from-indigo-500 to-blue-500",
+      publishDate: "Dec 5, 2024"
     },
     {
       id: 6,
-      day: 7,
       title: "Lighting Trends 2025: What's New in LED Tech",
       excerpt: "As LED lighting continues to evolve, 2025 is shaping up to be all about smart efficiency and sleek design...",
       content: "As LED lighting continues to evolve, 2025 is shaping up to be all about smart efficiency and sleek design. Smart LEDs with app and voice control, slim panels for ceiling integration, tunable white lights to adjust ambiance.",
       category: "Lighting",
       readTime: "4 min read",
       icon: Lightbulb,
-      gradient: "from-yellow-500 to-amber-500"
+      gradient: "from-yellow-500 to-amber-500",
+      publishDate: "Dec 3, 2024"
     },
     {
       id: 7,
-      day: 8,
       title: "What is Wire Thickness & Why It Matters in Wiring",
       excerpt: "Wire thickness directly affects electrical performance. Thicker wires allow more current flow and reduce the chances of overheating...",
       content: "Wire thickness directly affects electrical performance. Thicker wires allow more current flow and reduce the chances of overheating, while thinner wires may fail under heavy load. Selection depends on load requirement, installation environment, and appliance type.",
       category: "Technical",
       readTime: "3 min read",
       icon: Zap,
-      gradient: "from-cyan-500 to-blue-500"
+      gradient: "from-cyan-500 to-blue-500",
+      publishDate: "Nov 30, 2024"
     },
     {
       id: 8,
-      day: 10,
       title: "Choosing the Right Submersible Pump for Coolers & Fountains",
       excerpt: "When it comes to efficient water circulation in desert coolers, decorative fountains, or compact water features...",
       content: "When it comes to efficient water circulation in desert coolers, decorative fountains, or compact water features, a full-sized agricultural pump isn't what you need. Small submersible pumps are quiet, energy-efficient, and easy to install.",
       category: "Pumps",
       readTime: "5 min read",
       icon: Factory,
-      gradient: "from-teal-500 to-green-500"
+      gradient: "from-teal-500 to-green-500",
+      publishDate: "Nov 28, 2024"
     },
     {
       id: 9,
-      day: 11,
       title: "How to Plan Safe and Efficient Electrical Wiring for Factories",
       excerpt: "Wiring a factory isn't just about connecting machines—it's about ensuring long-term safety, scalability, and efficiency...",
       content: "Wiring a factory isn't just about connecting machines—it's about ensuring long-term safety, scalability, and efficiency. A well-planned wiring layout can prevent costly breakdowns, save energy, and protect workers and equipment.",
       category: "Industrial",
       readTime: "6 min read",
       icon: Factory,
-      gradient: "from-gray-600 to-gray-800"
+      gradient: "from-gray-600 to-gray-800",
+      publishDate: "Nov 25, 2024"
     },
     {
       id: 10,
-      day: 20,
       title: "Why Factories Need Flame Retardant Wiring More Than Ever",
       excerpt: "Factory environments pose a higher risk of electrical fires due to heavy machinery, continuous operation, and exposure to heat...",
       content: "Factory environments pose a higher risk of electrical fires due to heavy machinery, continuous operation, and exposure to heat. Using ordinary wires here can be dangerous. ZHFR wires prevent fire from spreading through conduits.",
       category: "Industrial",
       readTime: "4 min read",
       icon: Factory,
-      gradient: "from-red-600 to-pink-600"
+      gradient: "from-red-600 to-pink-600",
+      publishDate: "Nov 22, 2024"
     }
   ];
 
@@ -178,8 +178,15 @@ At Delna Electricals, we manufacture both PVC and ZHFR wires with precise insula
     const handleScroll = () => {
       const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
       const currentProgress = window.pageYOffset;
-      const scrolled = (currentProgress / totalScroll) * 100;
-      setScrollProgress(scrolled);
+      
+      // Prevent division by zero
+      if (totalScroll > 0) {
+        const scrolled = Math.min((currentProgress / totalScroll) * 100, 100);
+        setScrollProgress(scrolled);
+      } else {
+        setScrollProgress(0);
+      }
+      
       setShowScrollTop(window.pageYOffset > 300);
     };
 
@@ -220,11 +227,11 @@ At Delna Electricals, we manufacture both PVC and ZHFR wires with precise insula
         <div className={`h-2 bg-gradient-to-r ${post.gradient}`}></div>
         
         <div className="p-6">
-          {/* Day Badge and Category */}
+          {/* Date and Category */}
           <div className="flex justify-between items-center mb-4">
             <div className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r ${post.gradient} text-white shadow-lg`}>
-              <Calendar className="w-3 h-3 mr-1" />
-              Day {post.day}
+              <Clock className="w-3 h-3 mr-1" />
+              {post.publishDate}
             </div>
             <div className="flex items-center text-gray-500 text-sm">
               <Tag className="w-3 h-3 mr-1" />
@@ -270,8 +277,8 @@ At Delna Electricals, we manufacture both PVC and ZHFR wires with precise insula
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
       {/* Scroll Progress Bar */}
       <div 
-        className="fixed top-0 left-0 h-1 bg-gradient-to-r from-sky-500 to-sky-700 z-50 transition-all duration-300"
-        style={{ width: `${scrollProgress}%` }}
+        className="fixed top-0 left-0 h-1 bg-gradient-to-r from-sky-500 to-sky-700 transition-all duration-300"
+        style={{ width: `${scrollProgress}%`, zIndex: 9999 }}
       ></div>
 
       {/* Hero Section */}
@@ -299,8 +306,8 @@ At Delna Electricals, we manufacture both PVC and ZHFR wires with precise insula
             <div className="animate-fade-in-up animation-delay-600">
               <div className="inline-flex items-center px-8 py-4 bg-white bg-opacity-20 rounded-full backdrop-blur-sm border border-white border-opacity-30 hover:bg-opacity-30 transition-all duration-300">
                 <Zap className="w-6 h-6 mr-3 animate-pulse" />
-<span className="text-lg font-semibold text-gray-500">30 Days of Electrical Excellence</span>           
-   </div>
+                <span className="text-lg font-semibold text-gray-600">Expert Electrical Knowledge Hub</span>           
+              </div>
             </div>
           </div>
         </div>
@@ -367,7 +374,8 @@ At Delna Electricals, we manufacture both PVC and ZHFR wires with precise insula
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 p-4 bg-gradient-to-r from-sky-500 to-sky-600 text-white rounded-full shadow-2xl hover:shadow-3xl transform hover:scale-110 transition-all duration-300 z-50"
+          className="fixed bottom-8 right-8 p-4 bg-gradient-to-r from-sky-500 to-sky-600 text-white rounded-full shadow-2xl hover:shadow-3xl transform hover:scale-110 transition-all duration-300"
+          style={{ zIndex: 9998 }}
         >
           <ChevronUp className="w-6 h-6" />
         </button>
@@ -381,9 +389,9 @@ At Delna Electricals, we manufacture both PVC and ZHFR wires with precise insula
             <div className={`bg-gradient-to-r ${selectedPost.gradient} p-6 text-white relative`}>
               <button
                 onClick={closeModal}
-                className="absolute top-4 right-4 p-2 bg-white bg-opacity-20 rounded-full hover:bg-opacity-30 transition-all duration-300"
+                className="absolute top-4 right-4 p-2 bg-black bg-opacity-30 hover:bg-opacity-50 rounded-full transition-all duration-300 border border-white border-opacity-50"
               >
-                <X className="w-6 h-6" />
+                <X className="w-6 h-6 text-white" />
               </button>
               
               <div className="flex items-center mb-4">
@@ -392,8 +400,8 @@ At Delna Electricals, we manufacture both PVC and ZHFR wires with precise insula
                 </div>
                 <div>
                   <div className="flex items-center mb-2">
-                    <Calendar className="w-4 h-4 mr-2" />
-                    <span className="text-sm font-semibold">Day {selectedPost.day}</span>
+                    <Clock className="w-4 h-4 mr-2" />
+                    <span className="text-sm font-semibold">{selectedPost.publishDate}</span>
                     <span className="mx-2">•</span>
                     <Tag className="w-4 h-4 mr-1" />
                     <span className="text-sm">{selectedPost.category}</span>
@@ -403,10 +411,7 @@ At Delna Electricals, we manufacture both PVC and ZHFR wires with precise insula
                   </h2>
                 </div>
               </div>
-              {/* dhsjkdbsjnkam */}
-              {/* jska */}
-              {/* fdhsjk
-              dhsbjak */}
+              
               <div className="flex items-center text-white text-opacity-80">
                 <Eye className="w-4 h-4 mr-2" />
                 {selectedPost.readTime}

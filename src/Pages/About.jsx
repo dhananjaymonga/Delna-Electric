@@ -503,7 +503,7 @@ function App() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition-colors flex items-center justify-center gap-2"
-                  onClick={() => window.location.href = "/Contact"}
+                  onClick={() => window.location.href = "/contact"}
                 >
                   <Phone className="w-5 h-5" />
                   Contact Us Today
