@@ -10,7 +10,7 @@ function Home() {
       
       {/* Pricelist/Brochures Section */}
       <div
-        onClick={() => navigate("/pdfdowload")} // Navigate to the corresponding page
+        onClick={() => navigate("/pdf-download")} // Navigate to the corresponding page
         className="bg-white p-8 rounded-lg shadow-lg text-center cursor-pointer hover:shadow-xl transition-shadow"
       >
         <div className="flex justify-center mb-4">
@@ -35,7 +35,7 @@ function Home() {
 
       {/* RR Connect App Section */}
       <div
-        onClick={() => navigate("/Connect")} // Navigate to connect page
+        onClick={() => navigate("/connect")} // Navigate to connect page
         className="bg-white p-8 rounded-lg shadow-lg text-center cursor-pointer hover:shadow-xl transition-shadow"
       >
         <div className="flex justify-center mb-4">
