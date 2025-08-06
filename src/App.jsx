@@ -29,6 +29,7 @@ function App() {
       {/* {showPopup && <PopupModal onClose={() => setShowPopup(false)} />} */}
       
       <Navbar />
+      
       <Home />
       {/* <DealershipForm/> */}
       <Types />

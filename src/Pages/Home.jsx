@@ -1,35 +1,3 @@
-// import React from 'react';
-// import { useNavigate } from 'react-router-dom';
-
-// const Home = () => {
-//   const navigate = useNavigate();
-
-//   return (
-//     <div className="min-h-screen pt-16">
-//       <div className="relative h-[80vh] bg-gradient-to-br from-purple-50 to-blue-50">
-//         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center opacity-10"></div>
-//         <div className="relative max-w-7xl mx-auto px-4 h-full flex items-center">
-//           <div className="animate-fade-in">
-//             <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6">
-//               Welcome to <span className="bg-sky-800 bg-clip-text text-transparent">Delna Electric</span>
-//             </h1>
-//             <p className="text-xl text-gray-600 max-w-2xl mb-8">
-//               Experience innovation and excellence in everything we do. Discover our world-class products and services.
-//             </p>
-//             <button
-//               className="bg-purple-600 text-white px-8 py-3 rounded-lg hover:bg-purple-700 transform hover:scale-105 transition-all duration-300"
-//               onClick={() => navigate('/about')}
-//             >
-//               Read More
-//             </button>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Home;
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -46,15 +14,6 @@ const Home = () => {
       buttonText: 'Read More',
       buttonAction: () => console.log('Navigate to about')
     },
-    // {
-    //   id: 2,
-    //   image: 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
-    //   title: 'Advanced Technology',
-    //   subtitle: 'Cutting-Edge Solutions',
-    //   description: 'Harness the power of advanced electrical technology with our innovative solutions designed for the future.',
-    //   buttonText: 'Explore Products',
-    //   buttonAction: () => console.log('Navigate to products')
-    // },
     {
       id: 3,
       image: 'https://images.unsplash.com/photo-1581092921461-eab62e97a780?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
@@ -88,7 +47,7 @@ const Home = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
-    }, 5000);
+    }, 2000);
 
     return () => clearInterval(timer);
   }, [slides.length]);
@@ -185,14 +144,6 @@ const Home = () => {
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}
-        </div>
-
-        {/* Progress Bar */}
-        <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/20">
-          <div 
-            className="h-full bg-gradient-to-r from-sky-700 to-sky-800 transition-all duration-300 ease-linear"
-            style={{ width: `${((currentSlide + 1) / slides.length) * 100}%` }}
-          />
         </div>
       </div>
     </div>

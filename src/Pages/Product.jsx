@@ -517,6 +517,8 @@
 // export default ProductShowcase;
 import React, { useState, useEffect } from 'react';
 import { ArrowLeft, X, Star, ZoomIn, Share2 } from 'lucide-react';
+import Navbar from '../components/Navbar';
+import Footer from './Footer';
 
 const ProductShowcase = () => {
   const [products, setProducts] = useState([]);
@@ -531,6 +533,7 @@ const ProductShowcase = () => {
   const [imageLoadStates, setImageLoadStates] = useState({});
 
   // Fetch product data from public folder
+
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -662,7 +665,8 @@ const ProductShowcase = () => {
   const hasVariants = (product) => {
     return product.variants && Array.isArray(product.variants) && product.variants.length > 0;
   };
-
+  
+  
   if (isLoading) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
@@ -676,7 +680,7 @@ const ProductShowcase = () => {
       </div>
     );
   }
-
+  
   if (error) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
@@ -688,7 +692,7 @@ const ProductShowcase = () => {
           <button 
             onClick={() => window.location.reload()} 
             className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
-          >
+            >
             Retry
           </button>
         </div>
@@ -698,6 +702,7 @@ const ProductShowcase = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+    {showHeaderFooter && <Navbar />}
       <div className="max-w-7xl mx-auto px-4 py-8">
         {/* Category Filter */}
         <div className="mb-8 mt-16">
@@ -1264,6 +1269,7 @@ const ProductShowcase = () => {
         .delay-500 { animation-delay: 0.5s; }0.1s ease-out;
         }
       `}</style>
+    {showHeaderFooter && <Footer />}
     </div>
   );
 };

@@ -23,7 +23,7 @@ function Home() {
 
       {/* Cable Assist Calculator Section */}
       <div
-        onClick={() => navigate("/CableAssit")} // Navigate to calculator page
+        onClick={() => navigate("/cable-assist")} // Navigate to calculator page
         className="bg-white p-8 rounded-lg shadow-lg text-center cursor-pointer hover:shadow-xl transition-shadow"
       >
         <div className="flex justify-center mb-4">
