@@ -87,7 +87,7 @@ const Footer = () => {
                 </button>
                 
                 <button
-                  onClick={() => handleNavigation('/contact-professional')}
+                  onClick={() => handleNavigation('/contact')}
                   className="group p-5 bg-gradient-to-br from-purple-50 to-purple-100 hover:from-purple-100 hover:to-purple-200 rounded-xl transition-all duration-200 text-left border border-purple-200 hover:border-purple-300 hover:shadow-md"
                 >
                   <div className="flex items-center mb-3">

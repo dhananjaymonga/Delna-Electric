@@ -1,7 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom'; // Add this import
 import { Search, Calendar, Tag, Eye, ArrowRight, Zap, Shield, Lightbulb, Factory, Home, Wrench, ChevronUp, X, Clock } from 'lucide-react';
+import Navbar from '../components/Navbar';
+import Footer from './Footer';
 
 const DelnaElectricalsBlog = () => {
+  const location = useLocation(); // Add this hook
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [visiblePosts, setVisiblePosts] = useState([]);
@@ -144,6 +148,9 @@ At Delna Electricals, we manufacture both PVC and ZHFR wires with precise insula
   ];
 
   const categories = ['All', 'Home Wiring', 'Wire Types', 'Safety', 'Components', 'Lighting', 'Technical', 'Pumps', 'Industrial'];
+
+  // Check if should show header/footer
+  const showHeaderFooter = location.pathname === "/blog";
 
   // Filter posts based on search and category
   const filteredPosts = blogPosts.filter(post => {
@@ -291,7 +298,10 @@ At Delna Electricals, we manufacture both PVC and ZHFR wires with precise insula
           <div className="absolute bottom-10 right-10 w-24 h-24 bg-blue-400 opacity-10 rounded-full animate-spin slow"></div>
         </div>
 
-        <div className="relative z-10 container mx-auto px-6 py-20">
+        {/* Conditionally render Navbar */}
+        {showHeaderFooter && <Navbar/>}
+
+        <div className="relative z-10 container mx-auto px-6 py-20 mt-30">
           <div className="text-center max-w-4xl mx-auto">
             <div className="animate-fade-in-down">
               <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-cyan-200 bg-clip-text text-transparent animate-pulse">
@@ -369,6 +379,9 @@ At Delna Electricals, we manufacture both PVC and ZHFR wires with precise insula
           </div>
         )}
       </div>
+
+      {/* Conditionally render Footer */}
+      {showHeaderFooter && <Footer />}
 
       {/* Scroll to Top Button */}
       {showScrollTop && (
