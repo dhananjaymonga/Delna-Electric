@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { ArrowUp, Home } from 'lucide-react';
+import { AlertTriangle } from 'lucide-react';
 
 export default function CableAssistCalculator() {
   const [motorOutput, setMotorOutput] = useState(15);
@@ -251,27 +252,19 @@ export default function CableAssistCalculator() {
                   </div>
                 </div>
 
-                {/* Protection */}
-                {/* <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-4">Protection Requirements</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                      <div className="text-lg font-bold text-blue-800">{(currentDOL * 1.25).toFixed(1)}A</div>
-                      <div className="text-sm text-blue-700">Overload Setting</div>
-                      <div className="text-xs text-gray-600">125% of FLA</div>
-                    </div>
-                    <div className="bg-purple-50 border border-purple-200 rounded-lg p-4">
-                      <div className="text-lg font-bold text-purple-800">{(currentDOL * 2.5).toFixed(0)}A</div>
-                      <div className="text-sm text-purple-700">MCB Rating</div>
-                      <div className="text-xs text-gray-600">250% of FLA</div>
-                    </div>
-                    <div className="bg-green-50 border border-green-200 rounded-lg p-4">
-                      <div className="text-lg font-bold text-green-800">{(currentDOL * 6).toFixed(0)}A</div>
-                      <div className="text-sm text-green-700">Starting Current</div>
-                      <div className="text-xs text-gray-600">Typical DOL</div>
-                    </div>
-                  </div>
-                </div> */}
+             {/* Disclaimer */}
+                <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+                  <h3 className="text-lg font-semibold text-yellow-800 mb-3 flex items-center gap-2">
+                    <AlertTriangle className="h-5 w-5" />
+                    Important Note
+                  </h3>
+                  <p className="text-sm text-yellow-700 leading-relaxed">
+                    The current-carrying capacities mentioned above are based on standard reference values and ideal installation conditions. However, in actual practice, current ratings are often lower due to factors such as heat buildup, wire grouping, conduit usage, and ambient temperature.
+                  </p>
+                  <p className="text-sm text-yellow-700 leading-relaxed mt-2">
+                    At Delna, we follow a more conservative and safety-focused approach, ensuring our wires operate well within safe limits. This means our rated ampacity may appear lower, but it provides greater protection and longer lifespan in real-world usage.
+                  </p>
+                </div>
               </div>
             </div>
           ) : (
@@ -306,16 +299,16 @@ export default function CableAssistCalculator() {
                 </div>
               </div>
 
-              <div className="mt-8 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-                <h5 className="font-semibold text-blue-800 mb-2">Notes:</h5>
-                <ul className="text-sm text-blue-700 space-y-1">
-                  <li>⚠ Disclaimer: This tool provides approximate values for motor current and cable size under standard conditions. Actual requirements may vary depending on installation method, temperature, cable length, and safety factors. Always consult a licensed electrician or refer to IS standards for final selection. </li>
-                  <li>• Values are for ambient temperature of 30°C</li>
-                  <li>• For bundled cables, apply derating factors</li>
-                  <li>• Copper has higher conductivity than aluminum</li>
-                  <li>• Always follow local electrical codes</li>
-                </ul>
-              </div>
+           <div className="mt-8 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+  <h5 className="font-semibold text-blue-800 mb-2">Notes:</h5>
+  <ul className="text-sm text-blue-700 space-y-1">
+    <li>• ⚠ Disclaimer: This tool provides approximate values for motor current and cable size under standard conditions. Actual requirements may vary depending on installation method, temperature, cable length, and safety factors. Always consult a licensed electrician or refer to IS standards for final selection</li>
+    <li>• Values are for ambient temperature of 30°C</li>
+    <li>• For bundled cables, apply derating factors</li>
+    <li>• Copper has higher conductivity than aluminum</li>
+    <li>• Always follow local electrical codes</li>
+  </ul>
+</div>
             </div>
           )}
         </div>
