@@ -252,7 +252,7 @@ export default function CableAssistCalculator() {
                 </div>
 
                 {/* Protection */}
-                <div>
+                {/* <div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-4">Protection Requirements</h3>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
@@ -271,7 +271,7 @@ export default function CableAssistCalculator() {
                       <div className="text-xs text-gray-600">Typical DOL</div>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           ) : (
@@ -309,7 +309,7 @@ export default function CableAssistCalculator() {
               <div className="mt-8 p-4 bg-blue-50 border border-blue-200 rounded-lg">
                 <h5 className="font-semibold text-blue-800 mb-2">Notes:</h5>
                 <ul className="text-sm text-blue-700 space-y-1">
-                  <li>D</li>
+                  <li>⚠ Disclaimer: This tool provides approximate values for motor current and cable size under standard conditions. Actual requirements may vary depending on installation method, temperature, cable length, and safety factors. Always consult a licensed electrician or refer to IS standards for final selection. </li>
                   <li>• Values are for ambient temperature of 30°C</li>
                   <li>• For bundled cables, apply derating factors</li>
                   <li>• Copper has higher conductivity than aluminum</li>

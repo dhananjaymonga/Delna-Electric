@@ -1,56 +1,165 @@
-import Navbar from '../components/Navbar';
-import {NavLink, useLocation } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import { 
+  Zap, Phone, Star, Shield, Clock, Award, Users, Building, Home, Factory, 
+  ChevronDown, Mail, MapPin, User, MessageSquare, DollarSign, Wrench
+} from 'lucide-react';
+import Navbar from '../Components/Navbar';
+import Footer from "./Footer"
 
-import React, { useState,useEffect } from 'react';
-import { ArrowRight, Users, Rocket, Award, Globe, Leaf, Zap } from 'lucide-react';
-
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { Mail, Phone, MapPin } from 'lucide-react';
-import Footer from './Footer';
-
-const ContactPageClone = () => {
-
-    const [isStatsVisible, setIsStatsVisible] = useState(false);
-    const [scrollY, setScrollY] = useState(0);
-      const [isFormVisible, setIsFormVisible] = useState(false);
-      const [isProjectsVisible, setIsProjectsVisible] = useState(false);
-    
-      useEffect(() => {
-        const handleScroll = () => {
-          setScrollY(window.scrollY);
-          if (window.scrollY > 400) {
-            setIsFormVisible(true);
-          }
-          if (window.scrollY > 800) {
-            setIsStatsVisible(true);
-          }
-          if (window.scrollY > 1200) {
-            setIsProjectsVisible(true);
-          }
-        };
-    
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-      }, []);
-
-      const scrollToContact = () => {
-        const contactSection = document.getElementById('contact');
-        contactSection?.scrollIntoView({ behavior: 'smooth' });
-      };
-      const location = useLocation();
-
-
- const showHeaderFooter = location.pathname === "/Contact"; // Sirf About page pe show hoga
-    console.log("Current Path:", location.pathname);
+const DelnaElectricContact = () => {
+  const [projectCount, setProjectCount] = useState(0);
+  const [clientCount, setClientCount] = useState(0);
+  const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const [selectedService, setSelectedService] = useState('residential');
+  const [selectedBudget, setSelectedBudget] = useState('');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    subject: '',
-    message: ''
+    phone: '',
+    message: '',
+    serviceType: 'residential',
+    budget: ''
   });
 
-  const handleChange = (e) => {
+  // Service-specific information
+  const serviceInfo = {
+    residential: {
+      icon: Home,
+      label: "Residential Services",
+      color: "bg-blue-500",
+      description: "Complete electrical solutions for your home",
+      services: [
+        "Home Rewiring & Panel Upgrades",
+        "Outlet & Switch Installation", 
+        "Lighting Design & Installation",
+        "Ceiling Fan Installation",
+        "Electrical Safety Inspections",
+        "Smart Home Automation",
+        "Generator Installation",
+        "EV Charging Station Setup"
+      ],
+      budgetRanges: [
+        "Under $500",
+        "$500 - $1,500", 
+        "$1,500 - $5,000",
+        "$5,000 - $15,000",
+        "Over $15,000"
+      ]
+    },
+    commercial: {
+      icon: Building,
+      label: "Commercial Services", 
+      color: "bg-green-500",
+      description: "Professional electrical services for businesses",
+      services: [
+        "Office Building Electrical Systems",
+        "Retail Store Lighting Solutions",
+        "Security System Installation",
+        "Energy-Efficient LED Retrofits",
+        "Emergency Power Systems",
+        "Data Center Electrical Infrastructure",
+        "Parking Lot & Exterior Lighting",
+        "Electrical Code Compliance"
+      ],
+      budgetRanges: [
+        "Under $2,000",
+        "$2,000 - $10,000",
+        "$10,000 - $25,000", 
+        "$25,000 - $75,000",
+        "Over $75,000"
+      ]
+    },
+    industrial: {
+      icon: Factory,
+      label: "Industrial Services",
+      color: "bg-purple-500", 
+      description: "Heavy-duty electrical solutions for industrial facilities",
+      services: [
+        "Manufacturing Equipment Wiring",
+        "High-Voltage Power Distribution",
+        "Motor Control & Automation",
+        "Industrial Lighting Systems",
+        "Power Factor Correction",
+        "Electrical Maintenance Programs",
+        "Hazardous Location Installations",
+        "Plant Electrical Upgrades"
+      ],
+      budgetRanges: [
+        "Under $10,000",
+        "$10,000 - $50,000",
+        "$50,000 - $150,000",
+        "$150,000 - $500,000", 
+        "Over $500,000"
+      ]
+    }
+  };
+
+  const testimonials = [
+    {
+      name: "Sarah Johnson",
+      company: "Johnson Enterprises", 
+      text: "Exceptional electrical work! Fast, professional, and reliable service.",
+      rating: 5
+    },
+    {
+      name: "Mike Chen",
+      company: "Chen Manufacturing",
+      text: "Delna Electric transformed our facility's electrical system. Outstanding!",
+      rating: 5
+    },
+    {
+      name: "Lisa Rodriguez", 
+      company: "Rodriguez Holdings",
+      text: "Available 24/7 and always delivers quality work. Highly recommended!",
+      rating: 5
+    }
+  ];
+
+  // Animated counters
+  useEffect(() => {
+    const projectTimer = setInterval(() => {
+      setProjectCount(prev => {
+        if (prev < 1247) return prev + 17;
+        clearInterval(projectTimer);
+        return 1247;
+      });
+    }, 30);
+
+    const clientTimer = setInterval(() => {
+      setClientCount(prev => {
+        if (prev < 523) return prev + 7;
+        clearInterval(clientTimer);
+        return 523;
+      });
+    }, 50);
+
+    return () => {
+      clearInterval(projectTimer);
+      clearInterval(clientTimer);
+    };
+  }, []);
+
+  // Auto-rotate testimonials
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTestimonial(prev => (prev + 1) % testimonials.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
+  // Handle service type change
+  const handleServiceChange = (serviceType) => {
+    setSelectedService(serviceType);
+    setSelectedBudget('');
+    setFormData(prev => ({
+      ...prev,
+      serviceType,
+      budget: ''
+    }));
+  };
+
+  // Handle form input changes
+  const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
@@ -58,500 +167,301 @@ const ContactPageClone = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(formData);
+  // Handle form submission
+  const handleSubmit = () => {
+    if (!formData.name || !formData.email || !formData.phone || !formData.budget || !formData.message) {
+      alert('Please fill in all required fields.');
+      return;
+    }
+    console.log('Form submitted:', formData);
+    // Add your form submission logic here
+    alert('Thank you for your inquiry! We will contact you soon.');
   };
-      
-  useEffect(() => {
-    window.scrollTo(0,0)
-   }, []);
+
+  const ElectricParticle = ({ delay = 0 }) => (
+    <div 
+      className="absolute w-2 h-2 bg-yellow-400 rounded-full animate-pulse opacity-70"
+      style={{
+        animation: `float 3s ease-in-out infinite ${delay}s, pulse 2s ease-in-out infinite ${delay}s`,
+        left: `${Math.random() * 100}%`,
+        top: `${Math.random() * 100}%`
+      }}
+    />
+  );
+
+  const currentServiceInfo = serviceInfo[selectedService];
+  const IconComponent = currentServiceInfo.icon;
+
   return (
     <>
-      <Navbar/>
-      <section className="relative h-screen flex items-center justify-center bg-gradient-to-r from-blue-600 to-blue-400 text-white overflow-hidden">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1 }}
-          className="text-center px-4 relative z-10"
-        >
-          <motion.h1 
-            initial={{ y: -50 }}
-            animate={{ y: 0 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-            className="text-5xl md:text-7xl font-bold mb-6"
-          >
-            Innovation Meets Excellence
-          </motion.h1>
-          <motion.p 
-            initial={{ y: 50 }}
-            animate={{ y: 0 }}
-            transition={{ delay: 0.7, duration: 0.8 }}
-            className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto"
-          >
-            We're pushing the boundaries of technology to create solutions that matter.
-          </motion.p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold flex items-center gap-2 mx-auto hover:bg-blue-50 transition-colors"
-          >
-            Get Started <ArrowRight className="w-5 h-5" />
-          </motion.button> 
-        </motion.div>
-      </section>
-<section className="py-24 px-4 relative overflow-hidden">
-<div 
-  className="absolute inset-0 z-0"
-  style={{
-    backgroundImage: 'url(https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80)',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    filter: 'brightness(0.2)',
-  }}
-/>
-{/* <div className="max-w-7xl mx-auto relative z-10">
-  <div className="grid md:grid-cols-4 gap-8">
-    {[
-      { number: "250+", label: "Projects Completed" },
-      { number: "50+", label: "Team Members" },
-      { number: "30+", label: "Countries Served" },
-      { number: "95%", label: "Client Satisfaction" }
-    ].map((stat, index) => (
-      <div 
-        key={index}
-        className={`text-center transform transition-all duration-1000 ${
-          isStatsVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
-        }`}
-        style={{ transitionDelay: `${index * 200}ms` }}
-      >
-        <div className="text-5xl font-bold text-white mb-2">{stat.number}</div>
-        <div className="text-xl text-purple-200">{stat.label}</div>
-      </div>
-    ))}
-  </div>
-</div> */}
-</section>
-    <div className="min-h-screen bg-white p-4">
-      <div className="container mx-auto grid md:grid-cols-2 gap-8  mt-22">
-       {/* { Contact Information Section} */}
-        <div className="space-y-6 mt-10">
-          <div className="text-center mb-6">
-            <h1 className="text-2xl font-bold text-gray-800">Get in Touch</h1>
-            <p className="text-gray-600 mt-2">Have questions or feedback? We'd love to hear from you.</p>
-          </div>
+    <div className=''>
 
-          <div className="space-y-4">
-            <div className="flex items-center space-x-4 bg-gray-50 p-3 rounded-lg">
-              <Mail className="text-blue-500 w-6 h-6" />
-              <div>
-                <p className="font-semibold text-gray-700">Email Us</p>
-                <p className="text-gray-600 text-sm">Our support team will get back to you within 24 hours</p>
-                <p className="text-gray-600 text-sm">info@electronic.com</p>
-              </div>
-            </div>
-
-            <div className="flex items-center space-x-4 bg-gray-50 p-3 rounded-lg">
-              <Phone className="text-green-500 w-6 h-6" />
-              <div>
-                <p className="font-semibold text-gray-700">Call Us</p>
-                <p className="text-gray-600 text-sm">Available Monday to Friday, 9am to 6pm EST</p>
-                <p className="text-gray-600 text-sm">+1 (555) 123-4567</p>
-              </div>
-            </div>
-
-            <div className="flex items-center space-x-4 bg-gray-50 p-3 rounded-lg">
-              <MapPin className="text-red-500 w-6 h-6" />
-              <div>
-                <p className="font-semibold text-gray-700">Visit Us</p>
-                <p className="text-gray-600 text-sm">123 Music Street, Harmony City, NC 10001</p>
-                <a href="#" className="text-blue-500 text-sm">Get Directions</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-         {/* Contact Form Section */}
-       <div className="bg-white shadow-md rounded-lg p-6">
-
-          <h2 className="text-xl font-semibold text-gray-800 mb-6">Send Us a Message</h2>
-          <form onSubmit={handleSubmit} className="space-y-4">
-             <div>
-               <label className="block text-gray-700 text-sm mb-2">Your Name</label>
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="Enter your name"
-                required
-              />
-            </div>
-
-            <div>
-              <label className="block text-gray-700 text-sm mb-2">Email Address</label>
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="Enter your email"
-                required
-              />
-            </div>
-
-            <div>
-              <label className="block text-gray-700 text-sm mb-2">Subject</label>
-              <input
-                type="text"
-                name="subject"
-                value={formData.subject}
-                onChange={handleChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="How can we help you?"
-                required
-              />
-            </div>
-
-            <div>
-              <label className="block text-gray-700 text-sm mb-2">Message</label>
-              <textarea
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                rows={4}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="Tell us more about your inquiry"
-                required
-              />
-            </div>
-
-            <button
-              type="submit"
-              className="w-full bg-blue-500 text-white py-3 rounded-md hover:bg-blue-600 transition-colors duration-300"
-            >
-              Send Message
-            </button>
-          </form>
-        </div>
-      </div>
-
-      {/* Additional Section */}
-      <div className="text-center mt-8">
-        <h3 className="text-xl font-semibold text-gray-800">Have More Questions?</h3>
-        <p className="text-gray-600 mt-2">Check out our frequently asked questions for quick answers to common inquiries.</p>
- <NavLink to={"/faq"}> <button className="mt-4 bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition-colors duration-300">
-          View FAQ
-          
-        </button></NavLink>
-        
-      </div>
-
-      {/* Business Hours */}
-      <div className="text-center mt-8 bg-gray-50 p-6 rounded-lg">
-        <h4 className="text-lg font-semibold text-gray-800">Business Hours</h4>
-        <div className="mt-4 space-y-2">
-          <p className="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM</p>
-          <p className="text-gray-600">Saturday: 10:00 AM - 4:00 PM</p>
-          <p className="text-gray-600">Sunday: Closed</p>
-        </div>
-      </div>
+    <Navbar/>
     </div>
-    {showHeaderFooter && <Footer />}
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 relative overflow-hidden  ">
+  
+      {/* Background Effects */}
+      <div className="absolute inset-0    bg-[url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Cdefs%3E%3Cpattern%20id%3D%22grid%22%20width%3D%2210%22%20height%3D%2210%22%20patternUnits%3D%22userSpaceOnUse%22%3E%3Cpath%20d%3D%22M%2010%200%20L%200%200%200%2010%22%20fill%3D%22none%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%220.5%22%20opacity%3D%220.1%22/%3E%3C/pattern%3E%3C/defs%3E%3Crect%20width%3D%22100%22%20height%3D%22100%22%20fill%3D%22url(%23grid)%22/%3E%3C/svg%3E')] opacity-20"></div>
+      
+      {/* Floating Electric Particles */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none  ">
+        {[...Array(12)].map((_, i) => (
+          <ElectricParticle key={i} delay={i * 0.3} />
+        ))}
+      </div>
 
+      {/* Main Content */}
+      <div className="relative z-10 container mx-auto px-4 py-20 mt-10">
+        <div className="max-w-7xl mx-auto">
+          
+          {/* Header Section */}
+          <div className="text-center mb-16">
+            <div className="relative inline-block mb-8">
+              <Zap className="w-16 h-16 text-yellow-400 mx-auto animate-pulse" />
+            </div>
+
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+              <span className="bg-gradient-to-r from-yellow-400 via-white to-blue-400 bg-clip-text text-transparent">
+                Get Your Free Quote
+              </span>
+            </h1>
+
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+              Professional electrical services tailored to your needs. Licensed, insured, and available 24/7.
+            </p>
+          </div>
+
+          {/* Service Type Selector */}
+          <div className="flex flex-wrap justify-center gap-4 mb-12">
+            {Object.entries(serviceInfo).map(([key, service]) => {
+              const ServiceIcon = service.icon;
+              return (
+                <button
+                  key={key}
+                  onClick={() => handleServiceChange(key)}
+                  className={`flex items-center gap-3 px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 transform ${
+                    selectedService === key 
+                      ? `${service.color} text-white shadow-lg shadow-blue-500/25` 
+                      : 'bg-white/10 text-gray-300 hover:bg-white/20'
+                  }`}
+                >
+                  <ServiceIcon className="w-6 h-6" />
+                  <span className="font-semibold text-lg">{service.label}</span>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Main Content Grid */}
+          <div className="grid lg:grid-cols-2 gap-12 mb-16">
+            
+            {/* Service Information Panel */}
+            <div className="bg-white/5 backdrop-blur-lg rounded-3xl p-8 border border-white/10">
+              <div className="flex items-center gap-4 mb-6">
+                <div className={`p-4 rounded-2xl ${currentServiceInfo.color}`}>
+                  <IconComponent className="w-8 h-8 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-white">{currentServiceInfo.label}</h3>
+                  <p className="text-gray-300">{currentServiceInfo.description}</p>
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                <h4 className="text-xl font-semibold text-white flex items-center gap-2">
+                  <Wrench className="w-5 h-5 text-yellow-400" />
+                  Our Services Include:
+                </h4>
+                <div className="grid grid-cols-1 gap-3">
+                  {currentServiceInfo.services.map((service, index) => (
+                    <div key={index} className="flex items-center gap-3 text-gray-300">
+                      <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                      <span>{service}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Emergency Contact */}
+              <div className="mt-8 p-6 bg-red-500/10 border border-red-500/20 rounded-2xl">
+                <div className="flex items-center gap-3 mb-2">
+                  <Phone className="w-5 h-5 text-red-400 animate-pulse" />
+                  <span className="text-white font-semibold">24/7 Emergency Service</span>
+                </div>
+                <p className="text-gray-300 text-sm mb-3">Electrical emergencies don't wait. Neither do we.</p>
+                <button className="bg-red-500 hover:bg-red-600 text-white font-bold px-6 py-2 rounded-full transition-all duration-300 hover:scale-105">
+                  Call (555) 123-4567
+                </button>
+              </div>
+            </div>
+
+            {/* Contact Form */}
+            <div className="bg-white/5 backdrop-blur-lg rounded-3xl p-8 border border-white/10">
+              <div className="space-y-6">
+                <div className="text-center mb-6">
+                  <h3 className="text-2xl font-bold text-white mb-2">Request Your Quote</h3>
+                  <p className="text-gray-300">Fill out the form below and we'll get back to you within 24 hours.</p>
+                </div>
+
+                {/* Name Field */}
+                <div className="relative">
+                  <User className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    placeholder="Your Full Name"
+                    required
+                    className="w-full pl-12 pr-4 py-4 bg-white/10 border border-white/20 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition-all duration-300"
+                  />
+                </div>
+
+                {/* Email Field */}
+                <div className="relative">
+                  <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    placeholder="Your Email Address"
+                    required
+                    className="w-full pl-12 pr-4 py-4 bg-white/10 border border-white/20 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition-all duration-300"
+                  />
+                </div>
+
+                {/* Phone Field */}
+                <div className="relative">
+                  <Phone className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    placeholder="Your Phone Number"
+                    required
+                    className="w-full pl-12 pr-4 py-4 bg-white/10 border border-white/20 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition-all duration-300"
+                  />
+                </div>
+
+                {/* Service Type Field (Hidden but updates with buttons) */}
+                <input type="hidden" name="serviceType" value={formData.serviceType} />
+
+                {/* Budget Range Field */}
+                <div className="relative">
+                  <DollarSign className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                  <select
+                    name="budget"
+                    value={formData.budget}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full pl-12 pr-4 py-4 bg-white/10 border border-white/20 rounded-2xl text-white focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition-all duration-300 appearance-none"
+                  >
+                    <option value="" disabled className="bg-slate-800">Select Your Budget Range</option>
+                    {currentServiceInfo.budgetRanges.map((range, index) => (
+                      <option key={index} value={range} className="bg-slate-800">{range}</option>
+                    ))}
+                  </select>
+                  <ChevronDown className="absolute right-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
+                </div>
+
+                {/* Message Field */}
+                <div className="relative">
+                  <MessageSquare className="absolute left-4 top-4 w-5 h-5 text-gray-400" />
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    placeholder="Describe your project in detail..."
+                    required
+                    rows={4}
+                    className="w-full pl-12 pr-4 py-4 bg-white/10 border border-white/20 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition-all duration-300 resize-none"
+                  />
+                </div>
+
+                {/* Submit Button */}
+                <button
+                  onClick={handleSubmit}
+                  className="w-full bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-black font-bold py-4 px-8 rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-2xl transform flex items-center justify-center gap-3"
+                >
+                  <Zap className="w-5 h-5" />
+                  Get My Free Quote
+                </button>
+
+                <p className="text-center text-sm text-gray-400">
+                  We respect your privacy. Your information will never be shared.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Stats Section */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 text-center hover:scale-105 transition-transform duration-300 border border-white/20">
+              <div className="text-4xl font-bold text-yellow-400 mb-2">{projectCount.toLocaleString()}+</div>
+              <div className="text-gray-300 font-semibold">Projects Completed</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 text-center hover:scale-105 transition-transform duration-300 border border-white/20">
+              <div className="text-4xl font-bold text-blue-400 mb-2">{clientCount.toLocaleString()}+</div>
+              <div className="text-gray-300 font-semibold">Happy Clients</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 text-center hover:scale-105 transition-transform duration-300 border border-white/20">
+              <div className="flex items-center justify-center mb-2">
+                <Clock className="w-8 h-8 text-green-400 mr-2" />
+                <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+              </div>
+              <div className="text-gray-300 font-semibold">24/7 Available</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 text-center hover:scale-105 transition-transform duration-300 border border-white/20">
+              <div className="flex justify-center mb-2">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-6 h-6 text-yellow-400 fill-current" />
+                ))}
+              </div>
+              <div className="text-gray-300 font-semibold">5-Star Rated</div>
+            </div>
+          </div>
+
+          {/* Testimonials */}
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 min-h-[200px] flex flex-col justify-center">
+              <div className="flex justify-center mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                ))}
+              </div>
+              <blockquote className="text-xl text-gray-300 mb-6 italic">
+                "{testimonials[currentTestimonial].text}"
+              </blockquote>
+              <div className="text-white font-semibold">{testimonials[currentTestimonial].name}</div>
+              <div className="text-gray-400">{testimonials[currentTestimonial].company}</div>
+            </div>
+            <div className="flex justify-center gap-3 mt-6">
+              {testimonials.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentTestimonial(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    currentTestimonial === index ? 'bg-yellow-400 scale-125' : 'bg-white/30 hover:bg-white/50'
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <style jsx>{`
+        @keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-10px); }
+        }
+      `}</style>
+      <Footer />
+    </div>
     </>
   );
 };
 
-export default ContactPageClone;
-// import React, { useEffect, useState } from 'react';
-// import { Building2, Mail, Phone, MapPin, Globe, ArrowDown, Code, Users, Zap, Target, Award, Briefcase } from 'lucide-react';
-
-// function App() {
-//   const [scrollY, setScrollY] = useState(0);
-// const [isStatsVisible, setIsStatsVisible] = useState(false);
-
-//   const [isFormVisible, setIsFormVisible] = useState(false);
-//   const [isProjectsVisible, setIsProjectsVisible] = useState(false);
-
-//   useEffect(() => {
-//     const handleScroll = () => {
-//       setScrollY(window.scrollY);
-//       if (window.scrollY > 400) {
-//         setIsFormVisible(true);
-//       }
-//       if (window.scrollY > 800) {
-//         setIsStatsVisible(true);
-//       }
-//       if (window.scrollY > 1200) {
-//         setIsProjectsVisible(true);
-//       }
-//     };
-
-//     window.addEventListener('scroll', handleScroll);
-//     return () => window.removeEventListener('scroll', handleScroll);
-//   }, []);
-
-//   const scrollToContact = () => {
-//     const contactSection = document.getElementById('contact');
-//     contactSection?.scrollIntoView({ behavior: 'smooth' });
-//   };
-
-//   return (
-//     <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 text-gray-800">
-//       {/* Hero Section */}
-//       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-//         <div 
-//           className="absolute inset-0 z-0"
-//           style={{
-//             backgroundImage: 'url(https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80)',
-//             backgroundSize: 'cover',
-//             backgroundPosition: 'center',
-//             filter: 'brightness(0.3)',
-//             transform: `translateY(${scrollY * 0.5}px)`,
-//           }}
-//         />
-//         <div className="relative z-10 text-center px-4">
-//           <h1 
-//             className="text-7xl font-bold mb-6 transform transition-all duration-1000 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-600"
-//             style={{ 
-//               opacity: 1 - scrollY / 500,
-//               transform: `translateY(${scrollY * 0.2}px)`
-//             }}
-//           >
-//             Delna
-//           </h1>
-//           <p 
-//             className="text-2xl mb-8 max-w-3xl mx-auto text-white"
-//             style={{ 
-//               opacity: 1 - scrollY / 400,
-//               transform: `translateY(${scrollY * 0.3}px)`
-//             }}
-//           >
-//             Transforming ideas into digital reality with cutting-edge solutions
-//           </p>
-//           <button
-//             onClick={scrollToContact}
-//             className="animate-bounce absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white hover:text-purple-200 transition-colors"
-//           >
-//             <ArrowDown size={32} />
-//           </button>
-//         </div>
-//       </section>
-
-//       {/* Services Section */}
-//       <section className="py-24 px-4 bg-gradient-to-br from-white/80 to-purple-50/80 backdrop-blur-sm">
-//         <div className="max-w-7xl mx-auto">
-//           <h2 className="text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-600">Our Services</h2>
-//           <div className="grid md:grid-cols-3 gap-12">
-//             {[
-//               { icon: Code, title: "Web Development", desc: "Creating responsive and dynamic web applications" },
-//               { icon: Target, title: "Digital Strategy", desc: "Strategic planning for digital transformation" },
-//               { icon: Zap, title: "Innovation", desc: "Cutting-edge solutions for modern challenges" }
-//             ].map((service, index) => (
-//               <div 
-//                 key={index}
-//                 className={`bg-white p-8 rounded-xl transform transition-all duration-1000 hover:scale-105 shadow-lg hover:shadow-xl border border-purple-100 ${
-//                   scrollY > 500 ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
-//                 }`}
-//                 style={{ transitionDelay: `${index * 200}ms` }}
-//               >
-//                 <service.icon size={48} className="mb-6 text-purple-600" />
-//                 <h3 className="text-2xl font-bold mb-4 text-gray-800">{service.title}</h3>
-//                 <p className="text-gray-600">{service.desc}</p>
-//               </div>
-//             ))}
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* Stats Section */}
-//       <section className="py-24 px-4 relative overflow-hidden">
-//         <div 
-//           className="absolute inset-0 z-0"
-//           style={{
-//             backgroundImage: 'url(https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80)',
-//             backgroundSize: 'cover',
-//             backgroundPosition: 'center',
-//             filter: 'brightness(0.2)',
-//           }}
-//         />
-//         <div className="max-w-7xl mx-auto relative z-10">
-//           <div className="grid md:grid-cols-4 gap-8">
-//             {[
-//               { number: "250+", label: "Projects Completed" },
-//               { number: "50+", label: "Team Members" },
-//               { number: "30+", label: "Countries Served" },
-//               { number: "95", label: "Client Satisfaction" }
-//             ].map((stat, index) => (
-//               <div 
-//                 key={index}
-//                 className={`text-center transform transition-all duration-1000 ${
-//                   isStatsVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
-//                 }`}
-//                 style={{ transitionDelay: `${index * 200}ms` }}
-//               >
-//                 <div className="text-5xl font-bold text-white mb-2">{stat.number}</div>
-//                 <div className="text-xl text-purple-200">{stat.label}</div>
-//               </div>
-//             ))}
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* Company Details */}
-//       <section className="py-24 px-4 bg-gradient-to-br from-blue-50 to-purple-50">
-//         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16">
-//           <div 
-//             className={`transform transition-all duration-1000 ${
-//               scrollY > 300 ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'
-//             }`}
-//           >
-//             <Building2 size={56} className="mb-8 text-purple-600" />
-//             <h2 className="text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-600">Our Company</h2>
-//             <p className="text-gray-700 leading-relaxed text-lg mb-6">
-//               With over a decade of experience in digital innovation, we've been at the forefront
-//               of technological advancement, helping businesses transform their digital presence
-//               and achieve unprecedented growth.
-//             </p>
-//             <div className="grid grid-cols-2 gap-6 mt-8">
-//               <div className="flex items-center space-x-3">
-//                 <Award className="text-purple-600" />
-//                 <span className="text-gray-800">Award Winning</span>
-//               </div>
-//               <div className="flex items-center space-x-3">
-//                 <Users className="text-purple-600" />
-//                 <span className="text-gray-800">Expert Team</span>
-//               </div>
-//               <div className="flex items-center space-x-3">
-//                 <Briefcase className="text-purple-600" />
-//                 <span className="text-gray-800">Professional</span>
-//               </div>
-//               <div className="flex items-center space-x-3">
-//                 <Target className="text-purple-600" />
-//                 <span className="text-gray-800">Goal Oriented</span>
-//               </div>
-//             </div>
-//           </div>
-//           <div 
-//             className={`transform transition-all duration-1000 delay-200 ${
-//               scrollY > 300 ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
-//             }`}
-//           >
-//             <Globe size={56} className="mb-8 text-purple-600" />
-//             <h2 className="text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-600">Global Reach</h2>
-//             <p className="text-gray-700 leading-relaxed text-lg mb-6">
-//               Operating across multiple continents, we bring diverse perspectives and
-//               innovative solutions to clients worldwide, ensuring cutting-edge technology
-//               meets local expertise.
-//             </p>
-//             <div className="bg-white p-6 rounded-xl shadow-lg border border-purple-100">
-//               <h3 className="text-2xl font-bold mb-4 text-gray-800">Our Global Presence</h3>
-//               <ul className="space-y-3">
-//                 <li className="flex items-center space-x-2">
-//                   <span className="w-2 h-2 bg-purple-600 rounded-full"></span>
-//                   <span className="text-gray-700">North America Headquarters</span>
-//                 </li>
-//                 <li className="flex items-center space-x-2">
-//                   <span className="w-2 h-2 bg-purple-600 rounded-full"></span>
-//                   <span className="text-gray-700">European Operations Center</span>
-//                 </li>
-//                 <li className="flex items-center space-x-2">
-//                   <span className="w-2 h-2 bg-purple-600 rounded-full"></span>
-//                   <span className="text-gray-700">Asia Pacific Hub</span>
-//                 </li>
-//               </ul>
-//             </div>
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* Contact Section */}
-//       <section id="contact" className="py-24 px-4 bg-gradient-to-br from-white to-purple-50">
-//         <div className="max-w-5xl mx-auto">
-//           <h2 className="text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-600">Get in Touch</h2>
-//           <div className="grid md:grid-cols-2 gap-16">
-//             <div 
-//               className={`transform transition-all duration-1000 ${
-//                 isFormVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
-//               }`}
-//             >
-//               <form className="space-y-8">
-//                 <div>
-//                   <label className="block text-lg font-medium mb-3 text-gray-700">Name</label>
-//                   <input
-//                     type="text"
-//                     className="w-full px-5 py-3 rounded-lg bg-white border border-purple-200 focus:outline-none focus:border-purple-500 transition-colors duration-300 text-gray-800 placeholder-gray-400"
-//                     placeholder="Your name"
-//                   />
-//                 </div>
-//                 <div>
-//                   <label className="block text-lg font-medium mb-3 text-gray-700">Email</label>
-//                   <input
-//                     type="email"
-//                     className="w-full px-5 py-3 rounded-lg bg-white border border-purple-200 focus:outline-none focus:border-purple-500 transition-colors duration-300 text-gray-800 placeholder-gray-400"
-//                     placeholder="your@email.com"
-//                   />
-//                 </div>
-//                 <div>
-//                   <label className="block text-lg font-medium mb-3 text-gray-700">Message</label>
-//                   <textarea
-//                     rows={5}
-//                     className="w-full px-5 py-3 rounded-lg bg-white border border-purple-200 focus:outline-none focus:border-purple-500 transition-colors duration-300 text-gray-800 placeholder-gray-400"
-//                     placeholder="Your message"
-//                   ></textarea>
-//                 </div>
-//                 <button
-//                   type="submit"
-//                   className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-[1.02] text-lg shadow-lg hover:shadow-xl"
-//                 >
-//                   Send Message
-//                 </button>
-//               </form>
-//             </div>
-//             <div 
-//               className={`space-y-8 transform transition-all duration-1000 delay-200 ${
-//                 isFormVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
-//               }`}
-//             >
-//               <div className="flex items-center space-x-6">
-//                 <MapPin size={32} className="text-purple-600" />
-//                 <div>
-//                   <h3 className="text-xl font-medium mb-1 text-gray-800">Address</h3>
-//                   <p className="text-gray-600 text-lg">123 Innovation Street, Tech City, TC 12345</p>
-//                 </div>
-//               </div>
-//               <div className="flex items-center space-x-6">
-//                 <Phone size={32} className="text-purple-600" />
-//                 <div>
-//                   <h3 className="text-xl font-medium mb-1 text-gray-800">Phone</h3>
-//                   <p className="text-gray-600 text-lg">+1 (555) 123-4567</p>
-//                 </div>
-//               </div>
-//               <div className="flex items-center space-x-6">
-//                 <Mail size={32} className="text-purple-600" />
-//                 <div>
-//                   <h3 className="text-xl font-medium mb-1 text-gray-800">Email</h3>
-//                   <p className="text-gray-600 text-lg">contact@delna.com</p>
-//                 </div>
-//               </div>
-//               <div className="bg-white p-8 rounded-xl shadow-lg mt-12 border border-purple-100">
-//                 <h3 className="text-2xl font-bold mb-4 text-gray-800">Business Hours</h3>
-//                 <div className="space-y-3">
-//                   <p className="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM</p>
-//                   <p className="text-gray-600">Saturday: 10:00 AM - 4:00 PM</p>
-//                   <p className="text-gray-600">Sunday: Closed</p>
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </section>
-//     </div>
-//   );
-// }
-
-// export default App; 
+export default DelnaElectricContact;

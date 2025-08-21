@@ -1,14 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useLocation } from 'react-router-dom'; // Add this import
 import { Search, Calendar, Tag, Eye, ArrowRight, Zap, Shield, Lightbulb, Factory, Home, Wrench, ChevronUp, X, Clock } from 'lucide-react';
-import Navbar from '../components/Navbar';
-import Footer from './Footer';
 
 const DelnaElectricalsBlog = () => {
-  const location = useLocation(); // Add this hook
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
-  const [visiblePosts, setVisiblePosts] = useState([]);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [selectedPost, setSelectedPost] = useState(null);
@@ -149,9 +144,6 @@ At Delna Electricals, we manufacture both PVC and ZHFR wires with precise insula
 
   const categories = ['All', 'Home Wiring', 'Wire Types', 'Safety', 'Components', 'Lighting', 'Technical', 'Pumps', 'Industrial'];
 
-  // Check if should show header/footer
-  const showHeaderFooter = location.pathname === "/blog";
-
   // Filter posts based on search and category
   const filteredPosts = blogPosts.filter(post => {
     const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -160,17 +152,17 @@ At Delna Electricals, we manufacture both PVC and ZHFR wires with precise insula
     return matchesSearch && matchesCategory;
   });
 
-  // Intersection Observer for animations
+  // Intersection Observer for animations - Fixed to not hide content
   useEffect(() => {
     observerRef.current = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-fade-in-up');
+          if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+            entry.target.classList.add('animate-fade-in-up', 'animated');
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1, rootMargin: '50px' }
     );
 
     return () => {
@@ -180,21 +172,20 @@ At Delna Electricals, we manufacture both PVC and ZHFR wires with precise insula
     };
   }, []);
 
-  // Scroll progress and scroll to top
+  // Fixed scroll progress calculation
   useEffect(() => {
     const handleScroll = () => {
-      const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
-      const currentProgress = window.pageYOffset;
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
       
-      // Prevent division by zero
-      if (totalScroll > 0) {
-        const scrolled = Math.min((currentProgress / totalScroll) * 100, 100);
-        setScrollProgress(scrolled);
+      if (docHeight > 0) {
+        const scrollPercent = (scrollTop / docHeight) * 100;
+        setScrollProgress(Math.min(scrollPercent, 100));
       } else {
         setScrollProgress(0);
       }
       
-      setShowScrollTop(window.pageYOffset > 300);
+      setShowScrollTop(scrollTop > 300);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -208,13 +199,13 @@ At Delna Electricals, we manufacture both PVC and ZHFR wires with precise insula
   const openModal = (post) => {
     setSelectedPost(post);
     setShowModal(true);
-    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    document.body.style.overflow = 'hidden';
   };
 
   const closeModal = () => {
     setShowModal(false);
     setSelectedPost(null);
-    document.body.style.overflow = 'unset'; // Restore scrolling
+    document.body.style.overflow = 'unset';
   };
 
   const BlogCard = ({ post, index }) => {
@@ -222,8 +213,12 @@ At Delna Electricals, we manufacture both PVC and ZHFR wires with precise insula
     
     return (
       <div 
-        className={`bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 opacity-0 translate-y-8 animate-fade-in-up overflow-hidden group`}
-        style={{ animationDelay: `${index * 0.1}s` }}
+        className={`bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 overflow-hidden group blog-card`}
+        style={{ 
+          animationDelay: `${index * 0.1}s`,
+          opacity: 1, // Always visible
+          transform: 'translateY(0px)' // Reset transform
+        }}
         ref={(el) => {
           if (el && observerRef.current) {
             observerRef.current.observe(el);
@@ -282,10 +277,10 @@ At Delna Electricals, we manufacture both PVC and ZHFR wires with precise insula
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
-      {/* Scroll Progress Bar */}
+      {/* Fixed Scroll Progress Bar */}
       <div 
-        className="fixed top-0 left-0 h-1 bg-gradient-to-r from-sky-500 to-sky-700 transition-all duration-300"
-        style={{ width: `${scrollProgress}%`, zIndex: 9999 }}
+        className="fixed top-0 left-0 h-1 bg-gradient-to-r from-sky-500 to-sky-700 transition-all duration-300 z-50"
+        style={{ width: `${scrollProgress}%` }}
       ></div>
 
       {/* Hero Section */}
@@ -295,13 +290,10 @@ At Delna Electricals, we manufacture both PVC and ZHFR wires with precise insula
           <div className="absolute top-10 left-10 w-20 h-20 bg-white opacity-10 rounded-full animate-bounce"></div>
           <div className="absolute top-20 right-20 w-16 h-16 bg-sky-400 opacity-20 rounded-full animate-pulse"></div>
           <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-cyan-400 opacity-15 rounded-full animate-ping"></div>
-          <div className="absolute bottom-10 right-10 w-24 h-24 bg-blue-400 opacity-10 rounded-full animate-spin slow"></div>
+          <div className="absolute bottom-10 right-10 w-24 h-24 bg-blue-400 opacity-10 rounded-full animate-spin-slow"></div>
         </div>
 
-        {/* Conditionally render Navbar */}
-        {showHeaderFooter && <Navbar/>}
-
-        <div className="relative z-10 container mx-auto px-6 py-20 mt-30">
+        <div className="relative z-10 container mx-auto px-6 py-20">
           <div className="text-center max-w-4xl mx-auto">
             <div className="animate-fade-in-down">
               <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-cyan-200 bg-clip-text text-transparent animate-pulse">
@@ -380,15 +372,11 @@ At Delna Electricals, we manufacture both PVC and ZHFR wires with precise insula
         )}
       </div>
 
-      {/* Conditionally render Footer */}
-      {showHeaderFooter && <Footer />}
-
       {/* Scroll to Top Button */}
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 p-4 bg-gradient-to-r from-sky-500 to-sky-600 text-white rounded-full shadow-2xl hover:shadow-3xl transform hover:scale-110 transition-all duration-300"
-          style={{ zIndex: 9998 }}
+          className="fixed bottom-8 right-8 p-4 bg-gradient-to-r from-sky-500 to-sky-600 text-white rounded-full shadow-2xl hover:shadow-3xl transform hover:scale-110 transition-all duration-300 z-50"
         >
           <ChevronUp className="w-6 h-6" />
         </button>
@@ -459,7 +447,6 @@ At Delna Electricals, we manufacture both PVC and ZHFR wires with precise insula
                 <h3 className="text-xl font-bold text-gray-800 mb-2">Ready to upgrade your electrical setup?</h3>
                 <p className="text-gray-600 mb-4">Contact Delna Electricals for high-quality, certified electrical products.</p>
                 <button 
-                  onClick={() => window.location.href = '/contact'}
                   className="bg-gradient-to-r from-sky-500 to-sky-600 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105 hover:from-sky-600 hover:to-sky-700"
                 >
                   Get Quote Now
@@ -472,6 +459,11 @@ At Delna Electricals, we manufacture both PVC and ZHFR wires with precise insula
 
       {/* Custom CSS for animations */}
       <style jsx>{`
+        .blog-card {
+          opacity: 1 !important;
+          transform: translateY(0px) !important;
+        }
+        
         @keyframes fade-in-down {
           from {
             opacity: 0;
@@ -517,7 +509,7 @@ At Delna Electricals, we manufacture both PVC and ZHFR wires with precise insula
           overflow: hidden;
         }
 
-        .animate-spin.slow {
+        .animate-spin-slow {
           animation: spin 8s linear infinite;
         }
 

@@ -440,7 +440,7 @@ function OptimizedAboutPage() {
                   className="relative h-96 rounded-2xl overflow-hidden shadow-2xl"
                 >
                   <img
-                    src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80"
+                    src="/images/about.png"
                     alt="Delna Electric Manufacturing"
                     className="w-full h-full object-cover"
                   />
