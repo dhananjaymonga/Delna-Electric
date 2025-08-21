@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { 
   Zap, Phone, Star, Shield, Clock, Award, Users, Building, Home, Factory, 
-  ChevronDown, Mail, MapPin, User, MessageSquare, DollarSign, Wrench
-} from 'lucide-react';
-import Navbar from '../Components/Navbar';
+  ChevronDown, Mail, MapPin, User, MessageSquare, DollarSign, Wrench} from 'lucide-react';
+import Navbar from '../components/Navbar';
 import Footer from "./Footer"
 
 const DelnaElectricContact = () => {
