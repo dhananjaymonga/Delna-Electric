@@ -494,7 +494,139 @@
       "name": "Electrical Wires",
       "image": "https://images.unsplash.com/photo-1601814933824-fd0b574dd592?q=80&w=1000",
       "description": "Premium electrical wires for superior conductivity"
+    },
+    {
+  "id": "16",
+  "name": "Delna Adjustable Cylinder Light",
+  "image": "/Images/delna-adjustable-cylinder-light.jpg",
+  "category": "Lights",
+  "description": "Experience premium illumination with Delna Adjustable Cylinder Light, crafted for powerful brightness, focused beam precision, and long-lasting durability. Designed with a heavy matte black body and special deep reflector, it delivers superior lighting performance for modern interiors.",
+  "features": [
+    "12W High Lumen Output",
+    "Special Deep Reflector – Focused Beam",
+    "Adjustable Tilt Design",
+    "Heavy Matte Black Aluminium Body",
+    "Premium LED Chip",
+    "Heat Resistant Construction",
+    "Long Lifespan Performance"
+  ],
+  "specifications": {
+    "Power": "12 Watt",
+    "Body Finish": "Matte Black",
+    "Mounting Type": "Surface Mounted",
+    "Adjustment": "Tilt Adjustable",
+    "Application": "Indoor Use, Outdoor Use"
+  }
+},
+{
+  "id": "17",
+  "name": "Delna Switchgears",
+  "image": "/Images/delna-switchgears.jpg",
+  "category": "Switchgears",
+  "description": "Ensure complete electrical safety and performance with Delna Switchgears, engineered for superior circuit protection, high fault breaking capacity, and long-term durability. Designed to protect residential, commercial, and industrial electrical systems from overloads, short circuits, and power surges with precision internal mechanisms and high-grade materials for reliable tripping and smooth switching.",
+  "features": [
+    "C Curve Protection (All Tripping Models)",
+    "10kA High Breaking Capacity",
+    "Mid Trip Facility",
+    "Strong Contact Mechanism",
+    "Durable & Heat Resistant Body",
+    "Smooth Operation",
+    "Long Service Life"
+  ],
+  "specifications": {
+    "Tripping Curve": "C Curve",
+    "Breaking Capacity": "10kA",
+    "Poles Available": "2P, 4P, TPN",
+    "Trip Facility": "Mid Trip",
+    "Application": "Residential / Commercial / Industrial"
+  },
+  "applications": [
+    "Electrical Distribution Boards",
+    "Industrial Panels",
+    "Commercial Buildings",
+    "Residential Wiring Systems",
+    "Generator & Inverter Integration"
+  ],
+  "productRange": [
+    {
+      "name": "MCB (Miniature Circuit Breaker)",
+      "details": "High-performance C Curve MCB with 10kA breaking capacity for accurate overload and short circuit protection."
+    },
+    {
+      "name": "TPN MCB (Triple Pole & Neutral)",
+      "details": "Three-phase protection solution suitable for commercial and industrial distribution boards."
+    },
+    {
+      "name": "DPS (Surge Protection Device)",
+      "details": "Advanced surge protection for safeguarding sensitive equipment from voltage spikes and lightning surges."
+    },
+    {
+      "name": "Isolators (2 Pole & 4 Pole)",
+      "details": "Heavy-duty isolators for safe manual disconnection during maintenance and service operations."
+    },
+    {
+      "name": "Changeover Switch (2P / 4P)",
+      "details": "Smooth and safe transition between power sources for uninterrupted supply."
     }
+  ]
+},
+{
+  "id": "4",
+  "name": "Delna Premium Metal Body LED Panel Lights",
+  "image": "/Images/delna-metal-body-panel-light.jpg",
+  "category": "Lights",
+  "description": "Experience industry-challenging brightness and durability with Delna Premium Metal Body LED Panel Lights, engineered for high lumen performance, strong heat resistance, and long-lasting reliability. Designed with a premium grooved metal body, this innovation sets a higher standard for modern lighting solutions.",
+  "features": [
+    "Industry Challenging High Lumen Output",
+    "Heavy Metal Body Construction",
+    "Premium Grooved Design",
+    "Stable & Flicker-Free Performance",
+    "Long Service Life",
+    "Heat Resistant Build",
+    "Modern & Elegant Finish"
+  ],
+  "variants": {
+    "Wattage Options": ["10W", "15W", "22W"],
+    "Shape Options": ["Round", "Square"],
+    "Body Colors": ["White Body", "Black Body"],
+    "Light Options": ["Cool White", "Natural White"]
+  },
+  "specifications": {
+    "Body Material": "Metal Body",
+    "Design Type": "Grooved Finish",
+    "Application": "Residential / Commercial / Project Use"
+  }
+}
+,
+{
+  "id": "18",
+  "name": "Delna Premium COB 12W",
+  "image": "/Images/delna-premium-cob-12w.jpg",
+  "category": "Lights",
+  "description": "Experience powerful and focused illumination with Delna Premium COB 12W, designed for high brightness performance and superior durability. Built with a strong metal body and glossy black reflector, it delivers sharp beam output with premium aesthetics and consistent long-lasting reliability for modern interiors and commercial lighting.",
+  "features": [
+    "12 Watt High Brightness Output",
+    "Glossy Black Deep Reflector",
+    "Strong Metal Body Construction",
+    "Focused Beam Illumination",
+    "Heat Resistant Design",
+    "Long Lifespan Performance",
+    "Stable & Flicker-Free Lighting"
+  ],
+  "variants": {
+    "Wattage": [12]
+  },
+  "specifications": {
+    "Light Type": "COB (Chip on Board)",
+    "Reflector Finish": "Glossy Black",
+    "Body Material": "Metal Body",
+    "Application": "Indoor / Commercial / Residential",
+    "Beam Type": "Focused Spot"
+  }
+}
+
+
+
 
   ]
 }
