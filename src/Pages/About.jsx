@@ -352,11 +352,9 @@ function OptimizedAboutPage() {
   const handleShowInfo = useCallback(() => {
     setShowInfo(prev => !prev);
   }, []);
-  const showHeaderFooter = location.pathname === "/about"; // Sirf About page pe show hoga
 
   return (
     <div className="min-h-screen bg-gray-50">
-    {showHeaderFooter && <Navbar />}
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center bg-gradient-to-r from-blue-600 to-blue-400 text-white overflow-hidden">
         <motion.div
@@ -624,7 +622,6 @@ function OptimizedAboutPage() {
           </div>
         </section>
       )}
-    {showHeaderFooter && <Footer/>}
     </div>
   );
 }

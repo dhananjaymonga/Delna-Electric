@@ -28,7 +28,6 @@ function App() {
     <div className="min-h-screen bg-gray-50">
       {/* {showPopup && <PopupModal onClose={() => setShowPopup(false)} />} */}
       
-      <Navbar />
       
       <Home />
       {/* <DealershipForm/> */}
@@ -40,7 +39,6 @@ function App() {
       <TestimonialSlider/>
       {/* <Contact /> */}
       <FAQ />
-      <Footer/>
     </div>
   );
 }

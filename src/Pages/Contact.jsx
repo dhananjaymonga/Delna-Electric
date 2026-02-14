@@ -282,7 +282,7 @@ const DelnaElectricContact = () => {
               </div>
 
               {/* Emergency Contact */}
-              <div className="mt-8 p-6 bg-red-500/10 border border-red-500/20 rounded-2xl">
+              {/* <div className="mt-8 p-6 bg-red-500/10 border border-red-500/20 rounded-2xl">
                 <div className="flex items-center gap-3 mb-2">
                   <Phone className="w-5 h-5 text-red-400 animate-pulse" />
                   <span className="text-white font-semibold">24/7 Emergency Service</span>
@@ -291,7 +291,7 @@ const DelnaElectricContact = () => {
                 <button className="bg-red-500 hover:bg-red-600 text-white font-bold px-6 py-2 rounded-full transition-all duration-300 hover:scale-105">
                   Call (555) 123-4567
                 </button>
-              </div>
+              </div> */}
             </div>
 
             {/* Contact Form */}
@@ -422,7 +422,7 @@ const DelnaElectricContact = () => {
           </div>
 
           {/* Testimonials */}
-          <div className="max-w-4xl mx-auto text-center">
+          {/* <div className="max-w-4xl mx-auto text-center">
             <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 min-h-[200px] flex flex-col justify-center">
               <div className="flex justify-center mb-4">
                 {[...Array(5)].map((_, i) => (
@@ -446,7 +446,7 @@ const DelnaElectricContact = () => {
                 />
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 

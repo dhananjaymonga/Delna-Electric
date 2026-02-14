@@ -1,15 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import { Heart, Mail, Phone, MapPin, Instagram, Twitter, Facebook, Linkedin, MessageCircle, X, Home, FileText, Users, Headphones } from 'lucide-react';
 
-const START_COUNT = 200000;
+const START_COUNT = 250000;
 
 const Footer = () => {
-  const [count, setCount] = useState(START_COUNT + 1);
+  const [count, setCount] = useState(() => {
+    const saved = localStorage.getItem('visitorCount');
+    return saved ? parseInt(saved) : START_COUNT;
+  });
   const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
-    // Simple counter increment on component mount
-    setCount(START_COUNT + Math.floor(Math.random() * 1000) + 1);
+    // Increment counter by 1 on page load
+    setCount(prevCount => {
+      const newCount = prevCount + 1;
+      localStorage.setItem('visitorCount', newCount.toString());
+      return newCount;
+    });
   }, []);
 
   const handleInfoClick = () => {
@@ -184,7 +191,7 @@ const Footer = () => {
             </div>
 
             {/* Contact Info */}
-            <div className="reveal-on-scroll reveal-delay-400">
+            {/* <div className="reveal-on-scroll reveal-delay-400">
               <h3 className="text-xl font-bold mb-4 text-sky-400">Contact Info</h3>
               <ul className="space-y-4">
                 <li className="flex items-start">
@@ -200,7 +207,7 @@ const Footer = () => {
                   <span className="text-gray-300">info@delna.com</span>
                 </li>
               </ul>
-            </div>
+            </div> */}
           </div>
 
           {/* Bottom Section */}
