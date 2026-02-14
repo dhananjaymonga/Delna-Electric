@@ -348,8 +348,7 @@ const DelnaElectricContact = () => {
                 <input type="hidden" name="serviceType" value={formData.serviceType} />
 
                 {/* Budget Range Field */}
-                <div className="relative">
-                  <DollarSign className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                  {/* <DollarSign className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
                   <select
                     name="budget"
                     value={formData.budget}
@@ -363,7 +362,7 @@ const DelnaElectricContact = () => {
                     ))}
                   </select>
                   <ChevronDown className="absolute right-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
-                </div>
+                </div> */}
 
                 {/* Message Field */}
                 <div className="relative">

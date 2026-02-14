@@ -66,10 +66,7 @@
         "Construction": "Aluminum heat sync"
       },
       "variants": [
-        {
-          "name": "Round Panel",
-          "specs": ["8W", "12W", "15W", "22W"]
-        },
+       
         {
           "name": "Square Panel",
           "specs": ["8W", "12W", "15W", "22W"]
@@ -219,34 +216,73 @@
         "Backed by Delna's quality assurance and service support"
       ]
     },
-    {
-      "id": "9",
-      "name": "Delna Linear Lights",
-      "image": "/images/DSC08932--1.jpg",
-      "category": "Lighting",
-      "description": "Slim and efficient linear LED lights with long focus range.",
-      "features": [
-        " Heavy-duty, long-life metal body",
-        " High/low voltage protection",
-        " Energy-efficient LED lighting",
-        " Weather-resistant and highly durable",
-        " Easy installation and operation"
-      ]
-    },
-    {
-      "id": "10",
-      "name": "Delna Foot Lights",
-      "image": "/images/DSC08930--00 (1).jpg",
-      "category": "Lighting",
-      "description": "Elegant LED foot lights for soft illumination.",
-      "features": [
-        " Heavy-duty, long-life metal body",
-        " High/low voltage protection",
-        " Energy-efficient LED lighting",
-        " Weather-resistant and highly durable",
-        " Easy installation and operation"
-      ]
-    },
+   {
+  "id": "9",
+  "name": "Delna Linear Light",
+  "image": "/images/DSC08932--1.jpg",
+  "category": "Lighting",
+  "description": "Introduce superior lighting performance with the Delna Linear Light — a sleek, modern luminaire designed for precision and style. Featuring a glossy gold finish with a black reflector, it delivers both premium illumination and an upscale aesthetic for refined interiors.",
+  "features": [
+    "10W high-efficiency performance",
+    "Focused beam with 5-eye premium lens",
+    "Glossy gold finish with black reflector",
+    "Heavy-duty long-life metal body",
+    "High/low voltage protection",
+    "Energy-efficient LED lighting",
+    "Weather-resistant and durable construction",
+    "Easy installation and operation"
+  ],
+  "specifications": {
+    "Wattage": "10W",
+    "Lens Type": "5-Eye Premium Focus Lens",
+    "Body Material": "Robust Metal Housing",
+    "Finish": "Glossy Gold with Black Reflector",
+    "Protection": "High/Low Voltage Protection",
+    "Application Type": "Accent / Task / Architectural Lighting"
+  },
+  "applications": [
+    "Display lighting",
+    "Corridors",
+    "Architectural highlights",
+    "Feature walls",
+    "Premium interior décor spaces"
+  ],
+  "brand": "Delna Electrical"
+},
+
+  {
+  "id": "11",
+  "name": "Delna Foot Light",
+  "image": "/images/DSC08930--00 (1).jpg",
+  "category": "lighting",
+  "description": "Soft Safety Lighting in a Sleek Frame. A minimalist, energy-efficient foot light designed for low-level illumination in staircases, corridors, and pathways. Provides soft glow visibility without glare.",
+  "features": [
+    "Low-glare soft illumination",
+    "Available in White and Black body colors",
+    "Energy-efficient 3W LED",
+    "Long lifespan with consistent brightness",
+    "Compact design for recessed or surface mounting",
+    "Lightweight and durable housing",
+    "Operates between 100V–300V with surge protection"
+  ],
+  "specifications": {
+    "Model": "Single Model",
+    "Wattage": "3W",
+    "Body Colors": "White, Black",
+    "Light Colors": "Cool White (6500K), Neutral White (4000K), Warm White (3000K)",
+    "Voltage Range": "100V–300V",
+    "Installation Type": "Recessed / Surface Mount"
+  },
+  "applications": [
+    "Staircases & Steps",
+    "Corridors & Hallways",
+    "Hotel Rooms & Lobbies",
+    "Bedroom Base Walls",
+    "Garden Pathways (Indoor use recommended)"
+  ],
+  "brand": "Delna Electrical"
+},
+
     {
       "id": "11",
       "name": "Delna ZHFR Electrical Wires",
@@ -465,32 +501,57 @@
       ]
     },
     {
-      "id": "18",
-      "name": "Delna MCBs & RCCBs",
-      "image": "/images/mcb-rccb.jpg",
-      "category": "Protection",
-      "description": "Protect your electrical circuits with Delna’s high-performance MCBs and RCCBs, engineered for durability, precision, and safety in both residential and industrial applications.",
-      "features": [
-        "Miniature Circuit Breakers (MCB): Type C Curve – Suitable for general use and inductive loads; trips between 5-10 times the rated current.",
-        "MD Trip (Magnetic Dual Trip) Facility – Provides fast disconnection during short circuits and ensures thermal protection against overload.",
-        "Mid Trip Feature – The switch handle clearly shows mid-position when tripped, helping you easily identify fault conditions—neither ON nor OFF, but a visible 'trip' status.",
-        "RCCB (Residual Current Circuit Breaker): Detects and disconnects leakage currents to prevent electric shocks.",
-        "Ensures enhanced protection for human safety and fire prevention."
-      ],
-      "specifications": {
-        "Available Configurations": "2 Pole, 3 Pole, TPN (Triple Pole with Neutral)",
-        "MCB Curve": "Type C",
-        "Trip Facility": "Magnetic Dual Trip (MD Trip)",
-        "Mid Trip": "Yes",
-        "RCCB": "Leakage current detection and disconnection"
-      },
-      "why_choose_delna": [
-        "Accurate tripping mechanism",
-        "High breaking capacity",
-        "Flame-retardant housing",
-        "Compact and easy-to-install design"
-      ]
+  "id": "18",
+  "name": "Delna Switchgears",
+  "image": "/images/DSC05554--PNG.png",
+  "category": "Switchgears",
+  "description": "Ensure complete electrical safety and performance with Delna Switchgears, engineered for superior circuit protection, high fault breaking capacity, and long-term durability. Designed to protect residential, commercial, and industrial electrical systems from overloads, short circuits, and power surges with precision internal mechanisms and high-grade materials for reliable tripping and smooth switching.",
+  "features": [
+    "C Curve Protection (All Tripping Models)",
+    "10kA High Breaking Capacity",
+    "Mid Trip Facility",
+    "Strong Contact Mechanism",
+    "Durable & Heat Resistant Body",
+    "Smooth Operation",
+    "Long Service Life"
+  ],
+  "specifications": {
+    "Tripping Curve": "C Curve",
+    "Breaking Capacity": "10kA",
+    "Poles Available": "2P, 4P, TPN",
+    "Trip Facility": "Mid Trip",
+    "Application": "Residential / Commercial / Industrial"
+  },
+  "applications": [
+    "Electrical Distribution Boards",
+    "Industrial Panels",
+    "Commercial Buildings",
+    "Residential Wiring Systems",
+    "Generator & Inverter Integration"
+  ],
+  "productRange": [
+    {
+      "name": "MCB (Miniature Circuit Breaker)",
+      "details": "High-performance C Curve MCB with 10kA breaking capacity for accurate overload and short circuit protection."
     },
+    {
+      "name": "TPN MCB (Triple Pole & Neutral)",
+      "details": "Three-phase protection solution suitable for commercial and industrial distribution boards."
+    },
+    {
+      "name": "DPS (Surge Protection Device)",
+      "details": "Advanced surge protection for safeguarding sensitive equipment from voltage spikes and lightning surges."
+    },
+    {
+      "name": "Isolators (2 Pole & 4 Pole)",
+      "details": "Heavy-duty isolators for safe manual disconnection during maintenance and service operations."
+    },
+    {
+      "name": "Changeover Switch (2P / 4P)",
+      "details": "Smooth and safe transition between power sources for uninterrupted supply."
+    }
+  ]
+},
     {
       "id": "19",
       "name": "Delna Purse Lights",
@@ -509,7 +570,87 @@
       }
     },
     {
-      "id": "20",
+  "id": "20",
+  "name": "Delna Adjustable Cylinder Light",
+  "image": "/images/DSC05551-PNG.png",
+  "category": "Lights",
+  "description": "Experience premium illumination with Delna Adjustable Cylinder Light, crafted for powerful brightness, focused beam precision, and long-lasting durability. Designed with a heavy matte black body and special deep reflector, it delivers superior lighting performance for modern interiors.",
+  "features": [
+    "12W High Lumen Output",
+    "Special Deep Reflector – Focused Beam",
+    "Adjustable Tilt Design",
+    "Heavy Matte Black Aluminium Body",
+    "Premium LED Chip",
+    "Heat Resistant Construction",
+    "Long Lifespan Performance"
+  ],
+  "specifications": {
+    "Power": "12 Watt",
+    "Body Finish": "Matte Black",
+    "Mounting Type": "Surface Mounted",
+    "Adjustment": "Tilt Adjustable",
+    "Application": "Indoor Use, Outdoor Use"
+  }
+},
+{
+  "id": "21",
+  "name": "Delna Premium Metal Body LED Panel Lights",
+  "image": "/images/DSC05552-PNG.png",
+  "category": "Lights",
+  "description": "Experience industry-challenging brightness and durability with Delna Premium Metal Body LED Panel Lights, engineered for high lumen performance, strong heat resistance, and long-lasting reliability. Designed with a premium grooved metal body, this innovation sets a higher standard for modern lighting solutions.",
+  "features": [
+    "Industry Challenging High Lumen Output",
+    "Heavy Metal Body Construction",
+    "Premium Grooved Design",
+    "Stable & Flicker-Free Performance",
+    "Long Service Life",
+    "Heat Resistant Build",
+    "Modern & Elegant Finish"
+  ],
+  "variants": {
+    "Wattage Options": ["10W", "15W", "22W"],
+    "Shape Options": ["Round", "Square"],
+    "Body Colors": ["White Body", "Black Body"],
+    "Light Options": ["Cool White", "Natural White"]
+  },
+  "specifications": {
+    "Body Material": "Metal Body",
+    "Design Type": "Grooved Finish",
+    "Application": "Residential / Commercial / Project Use"
+  }
+}
+,
+{
+  "id": "22",
+  "name": "Delna Premium COB 12W",
+  "image": "/images/DSC05555-PNG.png",
+  "category": "Lights",
+  "description": "Experience powerful and focused illumination with Delna Premium COB 12W, designed for high brightness performance and superior durability. Built with a strong metal body and glossy black reflector, it delivers sharp beam output with premium aesthetics and consistent long-lasting reliability for modern interiors and commercial lighting.",
+  "features": [
+    "12 Watt High Brightness Output",
+    "Glossy Black Deep Reflector",
+    "Strong Metal Body Construction",
+    "Focused Beam Illumination",
+    "Heat Resistant Design",
+    "Long Lifespan Performance",
+    "Stable & Flicker-Free Lighting"
+  ],
+  "variants": {
+    "Wattage": [12]
+  },
+  "specifications": {
+    "Light Type": "COB (Chip on Board)",
+    "Reflector Finish": "Glossy Black",
+    "Body Material": "Metal Body",
+    "Application": "Indoor / Commercial / Residential",
+    "Beam Type": "Focused Spot"
+  }
+},
+
+
+
+    {
+      "id": "23",
       "name": "Delna 4-Way Projector Light",
       "image": "/images/Delna- 4-WayProjector-Light.webp",
       "category": "Lighting",
@@ -557,6 +698,7 @@
     }
   ]
 }
+
 
 
 
